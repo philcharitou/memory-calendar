@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Happy Birthday Bubs</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,6 +18,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+        <script>
+            var original_month = {{ $month_number }};
+            var original_year = {{ $year }};
+
+            var month = {{ $month_number }};
+            var year = {{ $year }};
+
+            var months_away = {{ $number_of_months }} - 1;
+            var value = months_away * 100;
+        </script>
+
         <!-- Custom Styles -->
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
@@ -28,121 +39,65 @@
     </head>
 
     <body>
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center py-4 sm:pt-0">
-            @if(Route::has('login'))
-                <div class="user-buttons fixed top-0 right-0 py-4">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        <div class="animation-area">
+            <ul class="box-area">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
 
-            <div id="fixed-content" class="relative max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
+            <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
                 <div class="fixed-header">
-                    <img class="profile-img" src="{{ asset('/img/image_2.png') }}" alt="icon">
+                    <img class="image-one" src="{{ asset('/img/together.jpg') }}" alt="icon">
                 </div>
 
-                <div class="flex justify-between">
-                    <div class="scrolling-header"></div>
-                    <div id="menu" class="menu-box small-shadow">
-                        <div class="line-1"></div>
-                        <div class="line-2"></div>
+                <div id="header-container">
+                    <div id="month-move">
+                        <div id="month-left" class="month-selector">&#x21E6;</div>
+                        <div id="month">{{ $month }} {{ $year }}</div>
+                        <div id="month-right" class="month-selector">&#x21E8;</div>
                     </div>
                 </div>
 
-                <div id="content" class="mt-8 bg-white dark:bg-gray-800 overflow-hidden medium-shadow sm:rounded-lg">
-                    <div class="work-grid grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-02">
-                            <div class="work-container p-15 br-05">
-                                <div class="work-preview"></div>
-                                <div class="flex items-center">
-                                    <i class="fa-solid fa-camera-retro"></i>
-                                </div>
-
-                                <div>
-                                    <div class="text-lg">
-                                        Title
-                                    </div>
-                                    <div class="text-sm">
-                                        Filler text for what might eventually be a short description
-                                    </div>
-                                </div>
+                <div id="content" class="mt-4 bg-white dark:bg-gray-800 overflow-hidden medium-shadow sm:rounded-lg">
+                    @foreach($total_array as $index => $month)
+                        @if($index == 0)
+                            <div class="calendar-grid" id="move-calendar">
+                                @foreach($month as $day)
+                                    @if(!$day[1])
+                                        <div class="date inactive unselectable">
+                                            <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
+                                        </div>
+                                    @else
+                                        <div class="date active">
+                                            <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
+                                        </div>
+                                    @endif
+                                @endforeach
                             </div>
-                        </div>
-
-                        <div class="p-02">
-                            <div class="work-container p-15 br-05">
-                                <div class="work-preview"></div>
-                                <div class="flex items-center">
-                                    <i class="fa-solid fa-camera-retro"></i>
-                                </div>
-
-                                <div>
-                                    <div class="text-lg">
-                                        Title
-                                    </div>
-                                    <div class="text-sm">
-                                        Filler text for what might eventually be a short description
-                                    </div>
-                                </div>
+                        @else
+                            <div class="calendar-grid">
+                                @foreach($month as $day)
+                                    @if(!$day[1])
+                                        <div class="date inactive unselectable">
+                                            <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
+                                        </div>
+                                    @else
+                                        <div class="date active">
+                                            <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
+                                        </div>
+                                    @endif
+                                @endforeach
                             </div>
-                        </div>
-
-                        <div class="p-02">
-                            <div class="work-container p-15 br-05">
-                                <div class="work-preview"></div>
-                                <div class="flex items-center">
-                                    <i class="fa-solid fa-camera-retro"></i>
-                                </div>
-
-                                <div>
-                                    <div class="text-lg">
-                                        Title
-                                    </div>
-                                    <div class="text-sm">
-                                        Filler text for what might eventually be a short description
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-02">
-                            <div class="work-container p-15 br-05">
-                                <div class="work-preview"></div>
-                                <div class="flex items-center">
-                                    <i class="fa-solid fa-camera-retro"></i>
-                                </div>
-
-                                <div>
-                                    <div class="text-lg">
-                                        Title
-                                    </div>
-                                    <div class="text-sm">
-                                        Filler text for what might eventually be a short description
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="popout-menu" class="popout-menu">
-                        <div class="popout-section popout-1"></div>
-                        <div class="popout-section popout-2"></div>
-                        <div class="popout-section popout-3"></div>
-                        <div class="popout-section popout-4"></div>
-                        <ul>
-                            <li><a class="popout-item opacity" href="#">Home</a></li>
-                            <li><a class="popout-item opacity" href="#">About</a></li>
-                            <li><a class="popout-item opacity" href="#">Contact</a></li>
-                        </ul>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
@@ -151,12 +106,14 @@
                         </div>
                     </div>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        &#169; Phil Charitou 2022
+                    <div id="thanks" class="ml-4 text-center text-gray-500 sm:text-right sm:ml-0">
+                        Thanks for being mine &#10084;
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="modal-background" class="opacity"></div>
     </body>
 
     <!-- Custom Scripts -->
