@@ -81,4 +81,19 @@ class HomeController extends Controller
             ->with('number_of_months', $number_of_months)
             ->with('total_array', $total_array);
     }
+
+
+    /**
+     * Show the login screen.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function login()
+    {
+        $date = "2023-07-27 00:00:00";
+        $date_tmp = Carbon::createFromDate($date);
+        $days_left = $date_tmp->diffInDays(Carbon::now());
+
+        return view('auth.login', compact('days_left'));
+    }
 }

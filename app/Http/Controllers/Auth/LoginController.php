@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -29,6 +31,19 @@ class LoginController extends Controller
         $days_left = $date_tmp->diffInDays(Carbon::now());
 
         return view('auth.login', compact('days_left'));
+    }
+
+    public function passwordLogin(Request $request){
+
+        if($request->has('password')){
+            if(Auth::attempt(['email' => 'passwordlogin@yoursite.com', 'password' => $request->input('password')])) {
+                // User has the correct password
+                return redirect('/');
+            }
+        }
+
+        // Login failed
+        return redirect()->intended('/login');
     }
 
     /**
