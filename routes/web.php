@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::auth();
 Route::post('/login', 'Auth\AuthController@passwordLogin');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
