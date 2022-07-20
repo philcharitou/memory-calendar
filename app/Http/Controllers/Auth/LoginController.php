@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -20,6 +21,15 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
+    public function showLoginForm()
+    {
+        $date = "2023-07-27 00:00:00";
+        $date_tmp = Carbon::createFromDate($date);
+        $days_left = $date_tmp->diffInDays(Carbon::now());
+
+        return view('auth.login', compact('days_left'));
+    }
 
     /**
      * Where to redirect users after login.
