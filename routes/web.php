@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::auth();
-Route::post('/login', 'Auth\AuthController@passwordLogin');
+Route::post('/login', 'Auth\LoginController@passwordLogin');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/events', EventController::class);
