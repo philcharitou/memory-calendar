@@ -18,17 +18,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-        <script>
-            var original_month = {{ $month_number }};
-            var original_year = {{ $year }};
-
-            var month = {{ $month_number }};
-            var year = {{ $year }};
-
-            var months_away = {{ $number_of_months }} - 1;
-            var value = months_away * 100;
-        </script>
-
         <!-- Custom Styles -->
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
@@ -54,10 +43,6 @@
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
-                <div class="fixed-header">
-                    <img class="image-one" src="{{ asset('/img/together.jpg') }}" alt="icon">
-                </div>
-
                 <div id="header-container">
                     <div id="month-move">
                         <div id="month-left" class="month-selector">&#x21E6;</div>
@@ -67,21 +52,7 @@
                 </div>
 
                 <div id="content" class="mt-4 bg-white dark:bg-gray-800 overflow-hidden medium-shadow sm:rounded-lg">
-                    @foreach($total_array as $index => $month)
-                        <div class="calendar-grid" @if($index == 0)id="move-calendar"@endif>
-                            @foreach($month as $day)
-                                @if(!$day[1])
-                                    <div class="date inactive unselectable">
-                                        <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
-                                    </div>
-                                @else
-                                    <div id="{{ $day[0] }}" class="date active">
-                                        <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                    @endforeach
+
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
@@ -93,20 +64,6 @@
                     <div id="thanks" class="ml-4 text-center text-gray-500 sm:text-right sm:ml-0">
                         Thanks for being mine &#10084;
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="modal-background" class="opacity"></div>
-
-        <div class="modal-container">
-            <div id="event-modal" class="modal">
-                <div class="exit-modal"><i class="fa-solid fa-xmark"></i></div>
-                <div class="modal-warning">
-                    <h3>Missing something?</h3>
-                    <a href="{{ route('events.create') }}">
-                        <button class="btn btn-add">Add an Event</button>
-                    </a>
                 </div>
             </div>
         </div>

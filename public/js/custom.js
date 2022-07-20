@@ -1,15 +1,8 @@
-$("#login").click(function() {
-    $("#modal-background").removeClass("opacity");
-    $("#modal-background").addClass("pointer-events");
-
-    $("#login-modal").addClass("active-modal");
-    $(".lmb").addClass("active-modal");
-});
-
 $(".exit-modal").click(function() {
     $("#modal-background").addClass("opacity");
     $("#modal-background").removeClass("pointer-events");
 
+    $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
 });
 
@@ -17,6 +10,7 @@ $("#modal-background").click(function() {
     $("#modal-background").addClass("opacity");
     $("#modal-background").removeClass("pointer-events");
 
+    $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
 });
 
@@ -42,16 +36,12 @@ $('.password-toggle').click(function() {
     }
 });
 
-$("#menu").click(function() {
-    $("#menu").toggleClass("active");
+$('.date').click(function() {
+    $("#modal-background").removeClass("opacity");
+    $("#modal-background").addClass("pointer-events");
 
-    $(".popout-1").toggleClass("from-right");
-    $(".popout-2").toggleClass("from-right");
-    $(".popout-3").toggleClass("from-right");
-    $(".popout-4").toggleClass("from-right");
-
-    $(".popout-item").toggleClass("opacity");
-    $("#popout-background").toggleClass("opacity");
+    $("#event-modal").addClass("pointer-events");
+    $("#event-modal").addClass("active-modal");
 });
 
 $(".page-down").click(function() {

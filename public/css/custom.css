@@ -28,13 +28,46 @@ body {
     top: 0;
     left: 0;
 
-    background: rgba(17, 17, 17, 0.5);
+    background: rgba(17, 17, 17, 0.4);
     backdrop-filter: blur(4px);
 
     pointer-events: none;
 
     transition: all 0.5s ease;
     z-index: 10;
+}
+
+.modal-container {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#event-modal {
+    width: 50%;
+    height: auto;
+
+    min-width: 300px;
+    max-width: 800px;
+
+    padding: 1rem;
+    margin: auto;
+    position: absolute;
+
+    opacity: 0;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 5px 10px 1px rgba(0,0,0, 0.2);
+
+    pointer-events: none;
+    z-index: 20;
 }
 
 #thanks {
@@ -47,16 +80,12 @@ body {
     -moz-user-select: none; /*Firefox*/
 }
 
-.modal {
-    max-height: 100%;
-}
-
 .pointer-events {
     pointer-events: all !important;
 }
 
 .active-modal {
-    top: 0 !important;
+    opacity: 100% !important;
 }
 
 .exit-modal {
@@ -72,11 +101,90 @@ body {
     font-size: 1.5rem;
 
     position: absolute;
-    top: 7.5px;
-    right: -42.5px;
+    top: 10px;
+    right: 10px;
 
     cursor: pointer;
 }
+
+.modal-header {
+    width: 100%;
+    height: auto;
+
+    padding: 10px;
+}
+
+.modal-header h1, .modal-header h2 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.modal-header h2 {
+    font-size: 0.9rem;
+    text-transform: none;
+}
+
+.modal-warning {
+    width: 100%;
+    height: 170px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-warning h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rebeccapurple;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.modal-warning a {
+    margin-bottom: 1rem;
+}
+
+.btn-add {
+    padding: 0.6rem 1rem;
+
+    font-size: 1rem;
+
+    border-radius: 10px;
+    background: #efefef;
+    color: rebeccapurple;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0, 0.2);
+
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background: rebeccapurple;
+    color: #efefef;
+}
+
+.modal-images {
+    width: 100%;
+    height: 50%;
+
+    padding: 2rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mi {
+    height: 150px;
+    width:  150px;
+}
+
+.mi-1 { background: red; transform: scale(1); margin-left: 0; z-index: 23 }
+.mi-2 { background: blue; transform: scale(0.9); margin-left: -10%; z-index: 22 }
+.mi-3 { background: green; transform: scale(0.8); margin-left: -10%; z-index: 21 }
 
 .modal-banner {
     width: 100%;
@@ -481,7 +589,7 @@ input:focus {
 /** https://www.divinectorweb.com/2020/10/animated-background-html-css.html **/
 .animation-area {
     width: 100%;
-    height: 10%;
+    height: 100%;
 
     position: absolute;
     bottom: 2%;

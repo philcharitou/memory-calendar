@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -49,13 +50,13 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(ComponentStoreRequest $request)
+    public function store(Request $request)
     {
         $event = Event::create([
-            'item_code' => $request->item_code,
             'name' => $request->name,
-            'product_category' => $request->product_category,
-            'parent_category' => $request->parent_category,
+            'location' => $request->location,
+            'date' => $request->date,
+            'description' => $request->description,
         ]);
 
         // Update relationship with contacts and components
@@ -156,34 +157,6 @@ class EventController extends Controller
                     'order' => $i
                 ]);
             }
-        }
-    }
-
-    /**
-     * Remove the specified components from database.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function batch_delete()
-    {
-        if (Auth::user()->can('component_delete')) {
-            $data = json_decode(stripslashes($_REQUEST['data']));
-
-            foreach ($data as $id) {
-                $component = Component::where('id', $id)->first();
-
-                // Removing S3 records
-                if (isset($component->image)) {
-                    Storage::disk('s3')->delete($component->image);
-                }
-
-                $component->delete();
-            }
-
-            return redirect()->route('components.index')
-                ->with('delete', '');
-        } else {
-            return redirect()->back()->with('denied', '');
         }
     }
 }
