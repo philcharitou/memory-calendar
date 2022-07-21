@@ -450,7 +450,7 @@ input:focus {
     position: absolute;
 
     top: 50px;
-    left: -200px;
+    left: 0;
 
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -510,8 +510,6 @@ input:focus {
 /** NEW CODE **/
 .calendar-grid {
     min-width: 100%;
-
-    padding: 10px;
 
     display: grid;
 
@@ -711,6 +709,7 @@ input:focus {
 
     #fixed-content {
         width: 100%;
+        margin: auto;
 
         padding-top: 10rem;
     }
