@@ -46,7 +46,7 @@
             </ul>
         </div>
 
-        <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
+        <div class="sub-body">
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
                 <div class="fixed-header">

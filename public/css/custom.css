@@ -392,7 +392,7 @@ input:focus {
 #header-container {
     height: 50px;
 
-    margin: 1.5rem 0;
+    padding: 1.5rem 0;
 
     position: relative;
 
@@ -487,6 +487,11 @@ input:focus {
 .scrolling-header h1, h2 {
     margin: 0 0 0 1rem;
     text-transform: uppercase;
+}
+
+.sub-body {
+    height: 100%;
+    display: flex;
 }
 
 #content {
