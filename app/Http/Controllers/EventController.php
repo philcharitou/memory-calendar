@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\Event;
+use App\Models\Photo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -58,6 +59,14 @@ class EventController extends Controller
             'date' => $request->date,
             'description' => $request->description,
         ]);
+
+        foreach ($request->file('images') as $imagefile) {
+            $image = new Photo();
+            $path = $imagefile->store('images', 's3');
+            $image->url = $path;
+            $image->location = $request->location;
+            $image->save();
+        }
 
         // Update relationship with contacts and components
         $this->add_albums($event, $request);
@@ -130,6 +139,24 @@ class EventController extends Controller
         Event::where('id', $id)->first()->delete();
 
         return redirect()->back();
+    }
+
+    /**
+     * Send data to view
+     *
+     * @param $request
+     * @return mixed
+     */
+    public function getDate(Request $request) {
+        $event = Event::where('date', $request->date)->first();
+
+        $array = [];
+
+        foreach($event->photos as $photo) {
+            $array[] = $photo->url;
+        }
+
+        return json_encode(array(0, $event->name, $event->location, $event->description, $array));
     }
 
     /**

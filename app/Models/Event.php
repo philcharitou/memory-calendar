@@ -17,4 +17,11 @@ class Event extends Model
         'date',
         'description',
     ];
+
+    public function photos()
+    {
+        return $this->belongsToMany(Photo::class, 'events_photos_mapping',
+            'event_id', 'photo_id')
+            ->as('event_photo');
+    }
 }

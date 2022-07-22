@@ -1,3 +1,30 @@
+function getEvents(clicked_id) {
+    var Date = document.getElementById(clicked_id).id;
+
+    $.ajax({
+        type: "GET",
+        url: "/get-ajax",
+        data: { date: Date },
+        success: function (result) {
+            var results = $.parseJSON(result);
+
+            console.log(results);
+
+            // Determine if data was found, then populate respective modal
+            if(results[0] === 0) {
+
+            } else {
+
+            }
+        },
+        error: function (data) {
+            // Log error in console
+            console.log(data);
+            alert("Oops! Something went wrong :( Better call Phil");
+        }
+    });
+}
+
 $(".exit-modal").click(function() {
     $("#modal-background").addClass("opacity");
     $("#modal-background").removeClass("pointer-events");

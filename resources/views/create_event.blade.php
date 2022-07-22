@@ -46,7 +46,7 @@
                 <div id="header-container">
                     <div id="month-move">
                         <div id="month-left" class="month-selector">&#x21E6;</div>
-                        <div id="month">{{ $month }} {{ $year }}</div>
+                        <div id="month"></div>
                         <div id="month-right" class="month-selector">&#x21E8;</div>
                     </div>
                 </div>

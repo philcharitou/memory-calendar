@@ -13,8 +13,14 @@ class Photo extends Model
      */
     protected $fillable = [
         'name',
+        'url',
         'format',
         'caption',
         'description',
     ];
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'events_photos_mapping');
+    }
 }
