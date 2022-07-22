@@ -44,11 +44,7 @@
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
                 <div id="header-container">
-                    <div id="month-move">
-                        <div id="month-left" class="month-selector">&#x21E6;</div>
-                        <div id="month"></div>
-                        <div id="month-right" class="month-selector">&#x21E8;</div>
-                    </div>
+
                 </div>
 
                 <div id="content" class="mt-4 bg-white dark:bg-gray-800 overflow-hidden medium-shadow sm:rounded-lg">

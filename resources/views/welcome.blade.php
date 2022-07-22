@@ -6,6 +6,12 @@
 
         <title>Happy Birthday Bubs</title>
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}"/>
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
