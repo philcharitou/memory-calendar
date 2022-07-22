@@ -79,16 +79,13 @@
                     @endforeach
                 </div>
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                        </div>
-                    </div>
-
-                    <div id="thanks" class="ml-4 text-center text-gray-500 sm:text-right sm:ml-0">
+                <div class="container-footer">
+                    <div></div>
+                    <div id="thanks">
                         Thanks for being mine &#10084;
                     </div>
                 </div>
+
             </div>
         </div>
 

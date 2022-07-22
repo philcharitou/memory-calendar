@@ -78,6 +78,12 @@ body {
 }
 
 #thanks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 300;
