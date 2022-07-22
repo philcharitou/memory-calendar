@@ -386,6 +386,8 @@ input:focus {
 #header-container {
     height: 50px;
 
+    margin: 1.5rem 0;
+
     position: relative;
 
     display: flex;
@@ -456,7 +458,7 @@ input:focus {
 .fixed-header {
     position: absolute;
 
-    top: 50px;
+    top: 100px;
     left: 0;
 
     padding-left: 1.5rem;
@@ -483,6 +485,9 @@ input:focus {
 
 #content {
     position: relative;
+
+    background: white;
+    border-radius: 10px;
 
     overflow: hidden;
     display: flex;
