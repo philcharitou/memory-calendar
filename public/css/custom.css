@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 * {
     font-family: Oswald;
     color: #1a202c;
@@ -513,6 +517,9 @@ input:focus {
 /** NEW CODE **/
 .calendar-grid {
     min-width: 100%;
+
+    box-sizing: border-box;
+    padding: 10px;
 
     display: grid;
 
