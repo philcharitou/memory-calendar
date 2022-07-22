@@ -385,6 +385,8 @@ input:focus {
     width: 70%;
     margin: auto;
 
+    position: relative;
+
     max-width: 72rem;
     min-width: 22rem;
 }
@@ -740,8 +742,6 @@ input:focus {
     #fixed-content {
         width: 100%;
         margin: auto;
-
-        position: relative;
 
         padding-top: 10rem;
     }
