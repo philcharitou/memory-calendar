@@ -14,6 +14,10 @@ body {
     background-repeat: no-repeat;
 }
 
+#app {
+    height: 100%;
+}
+
 .page-down {
     position: absolute;
     bottom: 80px;
@@ -76,6 +80,14 @@ body {
 
     pointer-events: none;
     z-index: 20;
+}
+
+.container {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-footer {
@@ -218,7 +230,7 @@ body {
 }
 
 .card {
-    height: 500px;
+    height: 600px;
     width: 60%;
 
     min-width: 300px;
@@ -249,7 +261,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .form h1 {
@@ -261,6 +273,8 @@ body {
 .days_left {
     width: 100%;
 
+    text-transform: uppercase;
+
     text-align: center;
     margin: auto;
     font-size: 2rem;
@@ -269,6 +283,8 @@ body {
 
 .days_left span {
     color: purple;
+    font-size: 4rem !important;
+    line-height: 4rem;
 }
 
 .input-group {
