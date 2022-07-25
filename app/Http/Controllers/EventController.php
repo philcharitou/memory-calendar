@@ -70,7 +70,7 @@ class EventController extends Controller
 
         foreach ($request->file('images') as $imagefile) {
 
-            $path = $imagefile->store('images', 's3');
+            $path = $request->file('images')->store('images', 's3');
 
             Storage::disk('s3')->setVisibility($path, 'public');
 
