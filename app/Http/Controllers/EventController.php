@@ -172,7 +172,7 @@ class EventController extends Controller
 
             return json_encode(array(0, $event->name, $event->location, $event->description, $array));
         } else {
-            return null;
+            return json_encode([]);
         }
     }
 
