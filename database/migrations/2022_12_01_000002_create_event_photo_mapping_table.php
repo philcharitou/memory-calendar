@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventsPhotosMappingTable extends Migration
+class CreateEventPhotoMappingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEventsPhotosMappingTable extends Migration
      */
     public function up()
     {
-        Schema::create('events_photos_mapping', function (Blueprint $table) {
+        Schema::create('event_photo_mapping', function (Blueprint $table) {
             $table->increments('id');
             // Identification Fields
             $table->integer('event_id')->unsigned(); //Has Foreign
@@ -39,6 +39,6 @@ class CreateEventsPhotosMappingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events_photos_mapping');
+        Schema::dropIfExists('event_photo_mapping');
     }
 }
