@@ -21,6 +21,12 @@
 
         <script src="https://kit.fontawesome.com/a37dd41aa0.js" crossorigin="anonymous"></script>
 
+        <script>
+            window.onload = function() {
+                document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value + "%")
+            };
+        </script>
+
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

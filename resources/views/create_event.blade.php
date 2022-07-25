@@ -26,7 +26,8 @@
 
         <script>
             window.onload = function() {
-                document.getElementById("date").value = sessionStorage.getItem("date")
+                console.log(sessionStorage.getItem("date"));
+                document.getElementById("date").value = sessionStorage.getItem("date");
             }
         </script>
 

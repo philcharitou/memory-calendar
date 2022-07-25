@@ -92,10 +92,6 @@ var months = {
     12: "December",
 }
 
-window.onload = function() {
-    document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value + "%")
-};
-
 $("#month-left").click(function() {
     if((String(month) + String(year)) !== "42022") {
         value -= 100;
