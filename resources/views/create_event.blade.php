@@ -43,12 +43,12 @@
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
-                <div id="header-container">
+                <div id="form-header">
                     Add an Event
                 </div>
 
                 <div class="form-card">
-                    <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('events.store') }}" class="upload-form" enctype="multipart/form-data">
                         @csrf
                         <label>Event Name</label>
                         <input type="text" name="name" placeholder="Enter Product Name">
@@ -63,7 +63,7 @@
                             <div class="icon-holder">
                                 <i class="fa-solid fa-plus"></i>
                             </div>
-                            <p>Unlock Secrets</p>
+                            <p>Add Event</p>
                         </button>
 
                     </form>
