@@ -72,6 +72,12 @@
                         <div id="month">{{ $month }} {{ $year }}</div>
                         <div id="month-right" class="month-selector">&#x21E8;</div>
                     </div>
+
+                    @if (session()->has('success'))
+                        <div class="alert alert-success">
+                            Event successfully uploaded!
+                        </div>
+                    @endif
                 </div>
 
                 <div id="content" class="mt-4 bg-white dark:bg-gray-800 overflow-hidden medium-shadow sm:rounded-lg">

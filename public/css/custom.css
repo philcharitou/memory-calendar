@@ -649,6 +649,10 @@ input:focus {
     border-radius: 5px;
 }
 
+.date * {
+    text-align: center;
+}
+
 .date:hover {
     border: solid 1px #8c00ff;
     transform: scale(1.05);

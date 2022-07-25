@@ -69,8 +69,7 @@
                         <input type="text" name="location" placeholder="Enter Location">
 
                         <label>Description</label>
-                        <textarea name="description" rows="4">
-                        </textarea>
+                        <textarea name="description" rows="4"></textarea>
 
                         <label>Choose Images</label>
                         <input type="file"  name="images" multiple>

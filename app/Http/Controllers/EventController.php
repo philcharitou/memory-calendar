@@ -49,7 +49,7 @@ class EventController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -84,7 +84,7 @@ class EventController extends Controller
         // Save resource
         $event->save();
 
-        return redirect()->back();
+        return view('welcome')->with('success', '');
     }
 
     /**
