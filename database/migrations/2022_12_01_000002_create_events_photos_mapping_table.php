@@ -18,7 +18,6 @@ class CreateEventsPhotosMappingTable extends Migration
             // Identification Fields
             $table->integer('event_id')->unsigned(); //Has Foreign
             $table->integer('photo_id')->unsigned(); //Has Foreign
-            // Pivot Field(s)
 
             // Foreign Keys
             $table->foreign('event_id')

@@ -87,7 +87,7 @@ class EventController extends Controller
         // Save resource
         $event->save();
 
-        dd($event);
+        dd($event->photos());
 
         return redirect()->route('home')->with('success', '');
     }
