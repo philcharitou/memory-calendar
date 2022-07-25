@@ -25,6 +25,10 @@ function getEvents(clicked_id) {
     });
 }
 
+function setDate(clicked_id) {
+    sessionStorage.setItem("date", clicked_id);
+}
+
 $(".exit-modal").click(function() {
     $("#modal-background").addClass("opacity");
     $("#modal-background").removeClass("pointer-events");
@@ -62,12 +66,6 @@ $('.password-toggle').click(function() {
         $('.fa-eye').removeClass('fa-eye-slash');
     }
 });
-
-function setDate(clicked_id) {
-    sessionStorage.setItem("date", clicked_id);
-    console.log(clicked_id);
-    console.log(sessionStorage.getItem("date"));
-}
 
 $('.date').click(function() {
     $("#modal-background").removeClass("opacity");

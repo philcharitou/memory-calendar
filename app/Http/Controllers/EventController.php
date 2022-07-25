@@ -67,15 +67,19 @@ class EventController extends Controller
         ]);
 
         foreach ($request->file('images') as $imagefile) {
-            $image = new Photo();
-            $path = $imagefile->store('images', 's3');
-            $image->url = $path;
-            $image->location = $request->location;
-            $image->save();
-        }
 
-        // Update relationship with contacts and components
-        $this->add_albums($event, $request);
+            $path = $imagefile->store('images', 's3');
+
+            Storage::disk('s3')->setVisibility($path, 'public');
+
+            $image = Photo::create([
+                'url' => Storage::disk('s3')->url($path),
+                'name' => basename($path),
+                'location' => $request->location,
+            ]);
+
+            $event->photos()->attach($image->id);
+        }
 
         // Save resource
         $event->save();
@@ -172,24 +176,7 @@ class EventController extends Controller
      * @param $request
      * @return float|int|mixed
      */
-    public function add_albums($event, $request) {
-        $event->albums()->detach();
-
-        // Update vendor relationships
-        for ($i = 0; $i < $request->contact_count; $i++) {
-            if ($request->has('vendor' . $i) && $request->{'vendor' . $i} != "") {
-
-                $vendor = Album::where('company', $request->{'vendor' . $i})->first();
-
-                $event->albums()->attach($vendor->id, [
-                    'vendor' => $request->{"vendor" . $i},
-                    'currency' => $request->{"vendor_currency" . $i},
-                    'price' => $request->{"vendor_price" . $i},
-                    'quantity' => $request->{"vendor_quantity" . $i},
-                    'unit' => $request->{"vendor_unit" . $i},
-                    'order' => $i
-                ]);
-            }
-        }
+    public function add_photos($event, $request) {
+        return null;
     }
 }
