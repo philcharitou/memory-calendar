@@ -44,24 +44,19 @@
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
                 <div id="header-container">
-
+                    Add an Event
                 </div>
 
                 <div class="form-card">
                     <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
-
-                        {{ csrf_field() }}
-                        <div>
-                            <label>Event Name</label>
-                            <input type="text" name="name" placeholder="Enter Product Name">
-                            <label>Description</label>
-                            <textarea name="description" rows="4">
-                            </textarea>
-                        </div>
-                        <div>
-                            <label>Choose Images</label>
-                            <input type="file"  name="images" multiple>
-                        </div>
+                        @csrf
+                        <label>Event Name</label>
+                        <input type="text" name="name" placeholder="Enter Product Name">
+                        <label>Description</label>
+                        <textarea name="description" rows="4">
+                        </textarea>
+                        <label>Choose Images</label>
+                        <input type="file"  name="images" multiple>
                         <hr>
 
                         <button type="submit" class="submit-button">
@@ -72,17 +67,6 @@
                         </button>
 
                     </form>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                        </div>
-                    </div>
-
-                    <div id="thanks" class="ml-4 text-center text-gray-500 sm:text-right sm:ml-0">
-                        Thanks for being mine &#10084;
-                    </div>
                 </div>
             </div>
         </div>
