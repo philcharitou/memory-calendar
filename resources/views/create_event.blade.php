@@ -6,6 +6,9 @@
 
         <title>Happy Birthday Bubs</title>
 
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}"/>
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +46,7 @@
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
-                <div id="form-header">
+                <div class="form-header">
                     Add an Event
                 </div>
 
@@ -59,7 +62,7 @@
                         <input type="file"  name="images" multiple>
                         <hr>
 
-                        <button type="submit" class="submit-button">
+                        <button type="submit" class="submit-button form-button">
                             <div class="icon-holder">
                                 <i class="fa-solid fa-plus"></i>
                             </div>

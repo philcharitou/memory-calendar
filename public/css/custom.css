@@ -364,6 +364,10 @@ input:focus {
     outline: none;
 }
 
+.form-button {
+    width: 100% !important;
+}
+
 .submit-button {
     width: 90%;
     height: 50px;
