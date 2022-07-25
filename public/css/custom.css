@@ -768,16 +768,19 @@ input:focus {
 
 @keyframes button-background {
     0% {
-        background-position: center;
+        background-position: right;
     }
     25% {
-        background-position: right;
+        background-position: center;
     }
     50% {
         background-position: left;
     }
-    100% {
+    75% {
         background-position: center;
+    }
+    100% {
+        background-position: right;
     }
 }
 
