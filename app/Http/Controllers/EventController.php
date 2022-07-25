@@ -68,11 +68,11 @@ class EventController extends Controller
 
         dump($request->all());
 
-        foreach ($request->file('images') as $imagefile) {
+        foreach ($request->file('images') as $key => $file) {
 
             dump('test');
 
-            $path = $imagefile->store('images', $imagefile);
+            $path = $file->store('images', 's3');
 
             dump($path);
 
