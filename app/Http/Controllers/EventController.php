@@ -73,10 +73,8 @@ class EventController extends Controller
             dump('test');
 
             $path = Storage::disk('s3')->put('images', $imagefile);
-            $url = Storage::disk('s3')->url($path);
 
             dump($path);
-            dump($url);
 
 //            Storage::disk('s3')->setVisibility($path, 'public');
 //
