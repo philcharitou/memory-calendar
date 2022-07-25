@@ -231,7 +231,6 @@ body {
 
 .card {
     height: 600px;
-    width: 60%;
 
     min-width: 300px;
 
@@ -338,7 +337,7 @@ input:focus {
     justify-content: start;
     align-items: center;
 
-    background-image: linear-gradient(90deg, #0065ff, #6942ef, #6554c0, #008cff, #0065ff, #6942ef);
+    background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
     background-size: 400%;
     background-position: 0 0;
     border-radius: 1.5rem;
@@ -347,11 +346,37 @@ input:focus {
     text-transform: uppercase;
     font-size: 1rem;
 
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .submit-button:hover {
-    animation: gradientRotate 2s infinite;
+    background-position: right center;
+}
+
+.submit-button p {
+    color: white;
+}
+
+.icon-holder {
+    width: 40px;
+    height: 40px;
+
+    padding: 8px;
+    margin-right: 15px;
+
+    border: 3px solid white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-holder * {
+    color: white;
 }
 
 .submit-button:hover {
