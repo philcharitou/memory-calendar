@@ -72,7 +72,7 @@ class EventController extends Controller
 
             dump('test');
 
-            $path = Storage::disk('s3')->put('images', $imagefile);
+            $path = $imagefile->store('images', $imagefile);
 
             dump($path);
 
