@@ -83,6 +83,8 @@ class EventController extends Controller
             $event->photos()->attach($image->id);
         }
 
+        dd($event);
+
         // Save resource
         $event->save();
 
