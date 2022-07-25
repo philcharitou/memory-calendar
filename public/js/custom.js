@@ -69,6 +69,8 @@ $('.date').click(function() {
 
     $("#event-modal").addClass("pointer-events");
     $("#event-modal").addClass("active-modal");
+
+    sessionStorage.setItem("date", $(this).id);
 });
 
 $(".page-down").click(function() {

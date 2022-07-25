@@ -53,6 +53,12 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required | string | max:255',
+            'location' => 'required | string | max:255',
+            'description' => 'string | max:855',
+        ]);
+
         $event = Event::create([
             'name' => $request->name,
             'location' => $request->location,
