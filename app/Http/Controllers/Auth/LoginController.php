@@ -30,6 +30,10 @@ class LoginController extends Controller
         $date_tmp = Carbon::createFromDate($date);
         $days_left = $date_tmp->diffInDays(Carbon::now());
 
+        if(Carbon::now() > $date_tmp) {
+            $days_left = null;
+        }
+
         return view('auth.login', compact('days_left'));
     }
 

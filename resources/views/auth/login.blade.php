@@ -6,11 +6,15 @@
         <div class="login_title"><i class="fa-solid fa-lock"></i></div>
 
         <div class="days_left">
+            @if($days_left != null)
             only
             <br>
             <span>{{ $days_left }} days</span>
             <br>
             left
+            @else
+            <span>Welcome back!</span>
+            @endif
         </div>
         <div class="card-body">
             <form class="form" method="POST" action="{{ route('login') }}">
