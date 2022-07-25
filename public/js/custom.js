@@ -71,6 +71,8 @@ $('.date').click(function() {
     $("#event-modal").addClass("active-modal");
 
     sessionStorage.setItem("date", $(this).id);
+    console.log($(this).id);
+    console.log(sessionStorage.getItem("date"));
 });
 
 $(".page-down").click(function() {
