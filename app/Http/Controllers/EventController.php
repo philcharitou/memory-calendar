@@ -78,6 +78,8 @@ class EventController extends Controller
                 'location' => $request->location,
             ]);
 
+            dump($image);
+
             $event->photos()->attach($image->id);
         }
 
