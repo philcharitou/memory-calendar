@@ -72,7 +72,7 @@
                         <textarea name="description" rows="4"></textarea>
 
                         <label>Choose Images</label>
-                        <input type="file" name="images[]" multiple>
+                        <input type="file" name="images" multiple>
                         <hr>
 
                         <button type="submit" class="submit-button form-button">
