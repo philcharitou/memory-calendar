@@ -87,7 +87,7 @@ class EventController extends Controller
         // Save resource
         $event->save();
 
-        return view('welcome')->with('success', '');
+        return redirect()->route('home')->with('success', '');
     }
 
     /**
