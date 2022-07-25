@@ -284,6 +284,7 @@ body {
 
 .days_left span {
     color: purple;
+    font-family: 'Cookie', cursive;
     font-size: 4rem !important;
     line-height: 4rem;
 }
@@ -337,7 +338,8 @@ input:focus {
     justify-content: space-between;
     align-items: center;
 
-    animation: button-background 2s infinite;
+    animation: button-background 4s infinite;
+    animation-timing-function: linear;
 
     background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
     background-size: 300% 300%;
@@ -352,7 +354,8 @@ input:focus {
 }
 
 .submit-button:hover {
-    background-position: right center;
+    animation: none;
+    background-position: right !important;
 }
 
 .submit-button p {
