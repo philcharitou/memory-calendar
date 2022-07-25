@@ -79,7 +79,7 @@
                                 @else
                                     <div id="{{ $day[0] }}" class="date active">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
-                                        <div>{{ $day[3] }}</div>
+                                        <div>{{ $day[2] }}</div>
                                     </div>
                                 @endif
                             @endforeach
