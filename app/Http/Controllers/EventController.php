@@ -70,19 +70,21 @@ class EventController extends Controller
 
         foreach ($request->file('images') as $imagefile) {
 
-            $path = $imagefile->store('images', 's3');
+            dump('test');
 
-            Storage::disk('s3')->setVisibility($path, 'public');
-
-            $image = Photo::create([
-                'url' => $path,
-                'name' => basename($path),
-                'location' => $request->location,
-            ]);
-
-            dump($image);
-
-            $event->photos()->attach($image->id);
+//            $path = $imagefile->store('images', 's3');
+//
+//            Storage::disk('s3')->setVisibility($path, 'public');
+//
+//            $image = Photo::create([
+//                'url' => $path,
+//                'name' => basename($path),
+//                'location' => $request->location,
+//            ]);
+//
+//            dump($image);
+//
+//            $event->photos()->attach($image->id);
         }
 
         dd($event);
