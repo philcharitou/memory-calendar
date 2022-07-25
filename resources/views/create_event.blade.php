@@ -47,8 +47,31 @@
 
                 </div>
 
-                <div id="content" class="mt-4 bg-white dark:bg-gray-800 overflow-hidden medium-shadow sm:rounded-lg">
+                <div class="form-card">
+                    <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
 
+                        {{ csrf_field() }}
+                        <div>
+                            <label>Event Name</label>
+                            <input type="text" name="name" placeholder="Enter Product Name">
+                            <label>Description</label>
+                            <textarea name="description" rows="4">
+                            </textarea>
+                        </div>
+                        <div>
+                            <label>Choose Images</label>
+                            <input type="file"  name="images" multiple>
+                        </div>
+                        <hr>
+
+                        <button type="submit" class="submit-button">
+                            <div class="icon-holder">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                            <p>Unlock Secrets</p>
+                        </button>
+
+                    </form>
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
