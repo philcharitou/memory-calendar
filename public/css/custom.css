@@ -82,6 +82,11 @@ body {
     z-index: 20;
 }
 
+.event-image {
+    width: 200px;
+    height: 200px;
+}
+
 .container {
     height: 100%;
 

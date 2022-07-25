@@ -12,9 +12,19 @@ function getEvents(clicked_id) {
 
             // Determine if data was found, then populate respective modal
             if(results[0] === 0) {
+                $("#existing-event").css("visibility", "visible")
+                $("#create-event").css("visibility", "hidden")
 
+                $("#event-name").innerText = results[1];
+                $("#event-location").innerText = results[2];
+                $("#event-description").innerText = results[3];
+
+                for(let i = 0; i < results[4].length; i++) {
+                    console.log(results[4][i]);
+                }
             } else {
-
+                $("#existing-event").css("visibility", "hidden")
+                $("#create-event").css("visibility", "visible")
             }
         },
         error: function (data) {

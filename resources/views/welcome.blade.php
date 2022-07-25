@@ -114,11 +114,17 @@
         <div class="modal-container">
             <div id="event-modal" class="modal">
                 <div class="exit-modal"><i class="fa-solid fa-xmark"></i></div>
-                <div class="modal-warning">
+                <div id="create-event" class="modal-warning">
                     <h3>Missing something?</h3>
                     <a href="{{ route('events.create') }}">
                         <button class="btn btn-add">Add an Event</button>
                     </a>
+                </div>
+                <div id="existing-event">
+                    <p id="event-name"></p>
+                    <p id="event-location"></p>
+                    <p id="event-description"></p>
+                    <img src="" class="event-image" alt="">
                 </div>
             </div>
         </div>
