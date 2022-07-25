@@ -170,7 +170,7 @@ class EventController extends Controller
                 $array[] = $photo->url;
             }
 
-            return json_encode(array(0, $event->name, $event->location, $event->description, $array));
+            return json_encode(array(0, $event->name, $event->location, $event->date, $array));
         } else {
             return json_encode([]);
         }
