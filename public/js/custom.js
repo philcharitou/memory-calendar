@@ -1,6 +1,8 @@
 function getEvents(clicked_id) {
     var Date = document.getElementById(clicked_id).id;
 
+    console.log(Date);
+
     $.ajax({
         type: "GET",
         url: "/get-ajax",
@@ -12,8 +14,8 @@ function getEvents(clicked_id) {
 
             // Determine if data was found, then populate respective modal
             if(results[0] === 0) {
-                $("#existing-event").css("visibility", "visible")
-                $("#create-event").css("visibility", "hidden")
+                $("#existing-event").css("display", "unset")
+                $("#create-event").css("display", "none")
 
                 $("#event-name").innerText = results[1];
                 $("#event-location").innerText = results[2];
@@ -23,8 +25,8 @@ function getEvents(clicked_id) {
                     console.log(results[4][i]);
                 }
             } else {
-                $("#existing-event").css("visibility", "hidden")
-                $("#create-event").css("visibility", "visible")
+                $("#existing-event").css("display", "none")
+                $("#create-event").css("display", "unset")
             }
         },
         error: function (data) {
