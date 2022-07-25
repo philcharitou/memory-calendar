@@ -62,11 +62,20 @@ class HomeController extends Controller
                 // Query event for name to attach to array
                 $event = Event::where('date', $current_date->toDateString())->first();
 
-                if(!$active_month) {
-                    $temp_array[] = [$current_date->toDateString(), 0, $event->name];
+                if($event) {
+                    if(!$active_month) {
+                        $temp_array[] = [$current_date->toDateString(), 0, $event->name];
+                    } else {
+                        $temp_array[] = [$current_date->toDateString(), 1, $event->name];
+                    }
                 } else {
-                    $temp_array[] = [$current_date->toDateString(), 1, $event->name];
+                    if(!$active_month) {
+                        $temp_array[] = [$current_date->toDateString(), 0, ""];
+                    } else {
+                        $temp_array[] = [$current_date->toDateString(), 1, ""];
+                    }
                 }
+
 
                 $current_date->addDay();
             }
