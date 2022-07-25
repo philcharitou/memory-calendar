@@ -26,7 +26,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        $date = "2023-07-27 00:00:00";
+        $date = "2022-07-27 00:00:00";
         $date_tmp = Carbon::createFromDate($date);
         $days_left = $date_tmp->diffInDays(Carbon::now());
 

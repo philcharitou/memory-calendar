@@ -274,8 +274,6 @@ body {
 .days_left {
     width: 100%;
 
-    text-transform: uppercase;
-
     text-align: center;
     margin: auto;
     font-size: 2rem;
@@ -288,8 +286,7 @@ body {
     font-size: 4rem !important;
     line-height: 4rem;
 
-    text-shadow: 0 2px 3px #323232;
-    text-transform: uppercase;
+    text-shadow: 0 2px 1px #8f8f8f;
     letter-spacing: -2px;
 }
 

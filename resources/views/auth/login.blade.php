@@ -5,7 +5,13 @@
     <div class="card">
         <div class="login_title"><i class="fa-solid fa-lock"></i></div>
 
-        <div class="days_left">only<br><span>{{ $days_left }} days</span><br>left</div>
+        <div class="days_left">
+            only
+            <br>
+            <span>{{ $days_left }} days</span>
+            <br>
+            left
+        </div>
         <div class="card-body">
             <form class="form" method="POST" action="{{ route('login') }}">
                 @csrf
