@@ -377,11 +377,6 @@ input:focus {
     color: white;
 }
 
-.submit-button:hover {
-    border: solid 1px lightgray;
-    background: white;
-}
-
 .user-buttons {
     display: flex;
     flex-direction: column;
@@ -785,6 +780,10 @@ input:focus {
 }
 
 @media (max-width: 768px) {
+    body {
+        background-size: 500%;
+    }
+
     #content {
         border-radius: 0.5rem;
 
