@@ -87,6 +87,8 @@ class EventController extends Controller
         // Save resource
         $event->save();
 
+        dd($event);
+
         return redirect()->route('home')->with('success', '');
     }
 
@@ -170,7 +172,7 @@ class EventController extends Controller
                 $array[] = $photo->url;
             }
 
-            return json_encode(array(0, $event->name, $event->location, $event->date, $array));
+            return json_encode(array(0, $event->name, $event->location, $event->description, $array));
         } else {
             return json_encode([]);
         }
