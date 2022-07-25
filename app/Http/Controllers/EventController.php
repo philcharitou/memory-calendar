@@ -72,8 +72,10 @@ class EventController extends Controller
 
             dump('test');
 
-//            $path = $imagefile->store('images', 's3');
-//
+            $path = $imagefile->store('images', 's3');
+
+            dump($path);
+
 //            Storage::disk('s3')->setVisibility($path, 'public');
 //
 //            $image = Photo::create([
