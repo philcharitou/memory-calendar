@@ -329,17 +329,29 @@ input:focus {
 
 .submit-button {
     width: 90%;
-    height: 40px;
+    height: 50px;
 
     margin: 2rem auto 0 auto;
+    padding: 5px;
 
-    background: lightgray;
-    border-radius: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 
+    background-image: linear-gradient(90deg, #0065ff, #6942ef, #6554c0, #008cff, #0065ff, #6942ef);
+    background-size: 400%;
+    background-position: 0 0;
+    border-radius: 1.5rem;
+
+    color: white;
     text-transform: uppercase;
     font-size: 1rem;
 
     cursor: pointer;
+}
+
+.submit-button:hover {
+    animation: gradientRotate 2s infinite;
 }
 
 .submit-button:hover {
@@ -732,6 +744,15 @@ input:focus {
     50% { background-color: transparent; }
     99% { background-color: transparent; }
     100%  { background-color: darkred; }
+}
+
+@keyframes gradientRotate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 @keyframes blink-opacity {

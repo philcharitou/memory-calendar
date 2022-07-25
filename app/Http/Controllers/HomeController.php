@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Photo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,6 @@ class HomeController extends Controller
             // March 27 because it is the start of the calendar month for April
             // Actual date is April 7 for the formal
         $now = Carbon::now();
-        $month = $origin_date->format('M');
         $number_of_months = $origin_date->diffInMonths($now) + 1;
 
         $active_month = 0;
@@ -58,10 +59,13 @@ class HomeController extends Controller
                     $active_month = !$active_month;
                 }
 
+                // Query event for name to attach to array
+                $event = Event::where('date', $current_date->toDateString())->first();
+
                 if(!$active_month) {
-                    $temp_array[] = [$current_date->toDateString(), 0];
+                    $temp_array[] = [$current_date->toDateString(), 0, $event->name];
                 } else {
-                    $temp_array[] = [$current_date->toDateString(), 1];
+                    $temp_array[] = [$current_date->toDateString(), 1, $event->name];
                 }
 
                 $current_date->addDay();
