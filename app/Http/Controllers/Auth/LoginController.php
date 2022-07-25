@@ -28,7 +28,7 @@ class LoginController extends Controller
     {
         $date = "2022-07-27 00:00:00";
         $date_tmp = Carbon::createFromDate($date);
-        $days_left = $date_tmp->diffInDays(Carbon::now());
+        $days_left = $date_tmp->diffInDays(Carbon::now()) + 1;
 
         if(Carbon::now() > $date_tmp) {
             $days_left = null;
