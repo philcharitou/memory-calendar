@@ -63,16 +63,18 @@ $('.password-toggle').click(function() {
     }
 });
 
+function setDate(clicked_id) {
+    sessionStorage.setItem("date", clicked_id);
+    console.log(clicked_id);
+    console.log(sessionStorage.getItem("date"));
+}
+
 $('.date').click(function() {
     $("#modal-background").removeClass("opacity");
     $("#modal-background").addClass("pointer-events");
 
     $("#event-modal").addClass("pointer-events");
     $("#event-modal").addClass("active-modal");
-
-    sessionStorage.setItem("date", $(this).id);
-    console.log($(this).id);
-    console.log(sessionStorage.getItem("date"));
 });
 
 $(".page-down").click(function() {

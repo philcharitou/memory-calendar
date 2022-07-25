@@ -79,11 +79,11 @@
                         <div class="calendar-grid" @if($index == 0)id="move-calendar"@endif>
                             @foreach($month as $day)
                                 @if(!$day[1])
-                                    <div id="{{ $day[0] }}" class="date inactive unselectable">
+                                    <div class="date inactive unselectable">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                     </div>
                                 @else
-                                    <div id="{{ $day[0] }}" class="date active">
+                                    <div id="{{ $day[0] }}" class="date active" onclick="setDate(this.id)">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                         <div>{{ $day[2] }}</div>
                                     </div>
