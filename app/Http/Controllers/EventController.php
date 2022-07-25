@@ -80,14 +80,12 @@ class EventController extends Controller
                 ]);
 
 
-                $event->photos()->attach($image->id);
+                $event->photos()->attach($image);
             }
         }
 
         // Save resource
         $event->save();
-
-        dd($event->photos());
 
         return redirect()->route('home')->with('success', '');
     }
