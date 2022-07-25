@@ -334,19 +334,16 @@ input:focus {
     padding: 5px;
 
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 
     background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
-    background-size: 400%;
-    background-position: 0 0;
+    background-size: 300% 300%;
     border-radius: 1.5rem;
 
     color: white;
     text-transform: uppercase;
     font-size: 1rem;
-
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 
     cursor: pointer;
     transition: 0.5s;
@@ -358,6 +355,7 @@ input:focus {
 
 .submit-button p {
     color: white;
+    margin-right: 0.6rem;
 }
 
 .icon-holder {
