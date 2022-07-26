@@ -823,6 +823,17 @@ input:focus {
     background-size: cover;
     background-position: center;
 }
+.box-area li:nth-child(4) {
+    left: 25%;
+    width: 90px;
+    height: 90px;
+    animation-delay: 2s;
+    animation-duration: 11s;
+
+    background-image: url('../img/bubble (7).jpg');
+    background-size: cover;
+    background-position: center;
+}
 @keyframes animate {
     0% {
         transform: translateY(0) rotate(0deg);
