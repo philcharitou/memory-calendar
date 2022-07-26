@@ -88,12 +88,19 @@ body {
 }
 
 .event-uploaded {
-    text-align: center;
     width: 30%;
+
+    padding: 10px;
     margin: auto;
+
+    background-size: 300% 300%;
+    background-position: left;
     background-image: linear-gradient(to right, #895cf2 0%, #ffabf4 50%, #895cf2 100%);
     border-radius: 10px;
-    padding: 10px;
+    box-shadow: 0 2px 4px #484848;
+
+    color: white;
+    text-align: center;
 }
 
 .container {
