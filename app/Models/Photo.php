@@ -11,6 +11,9 @@ class Photo extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'event_photos';
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'name',
         'url',
@@ -19,8 +22,9 @@ class Photo extends Model
         'description',
     ];
 
-    public function events()
+    // Photo model belongs to an event
+    public function event()
     {
-        return $this->belongsToMany(Event::class, 'event_photo_mapping');
+        return $this->belongsTo(Event::class);
     }
 }

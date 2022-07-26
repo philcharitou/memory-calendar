@@ -20,7 +20,6 @@ class Event extends Model
 
     public function photos()
     {
-        return $this->belongsToMany(Photo::class, 'event_photo_mapping',
-            'event_id', 'photo_id');
+        return $this->hasMany(Photo::class);
     }
 }
