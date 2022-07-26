@@ -66,7 +66,11 @@ class HomeController extends Controller
                     if(!$active_month) {
                         $temp_array[] = [$current_date->toDateString(), 0, $event->name, ""];
                     } else {
-                        $temp_array[] = [$current_date->toDateString(), 1, $event->name, $event->photos()->first()->url];
+                        if($event->photos()->first()) {
+                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, $event->photos()->first()->url];
+                        } else {
+                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, ""];
+                        }
                     }
                 } else {
                     if(!$active_month) {
