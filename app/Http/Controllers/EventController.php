@@ -166,9 +166,8 @@ class EventController extends Controller
         $array = [];
 
         if(isset($event)) {
-            foreach($event->photos as $photo) {
-//              $array[] = $photo->url;
-                $array[] = 1;
+            foreach($event->photos as $key => $photo) {
+                $array[] = $photo->url;
             }
 
             return json_encode(array(0, $event->name, $event->location, $event->description, $array));

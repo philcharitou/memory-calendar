@@ -63,9 +63,9 @@
         <div class="sub-body">
             <div id="fixed-content" class="relative max-w-6xl mx-auto">
 
-                <div class="fixed-header">
-                    <img class="image-one" src="{{ asset('/img/together.jpg') }}" alt="icon">
-                </div>
+{{--                <div class="fixed-header">--}}
+{{--                    <img class="image-one" src="{{ asset('/img/together.jpg') }}" alt="icon">--}}
+{{--                </div>--}}
 
                 <div id="header-container">
                     <div id="month-move">
@@ -90,7 +90,7 @@
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                     </div>
                                 @else
-                                    <div id="{{ $day[0] }}" class="date active" onclick="setDate(this.id); getEvents(this.id)">
+                                    <div id="{{ $day[0] }}" style="background: url({{ $day[3] }})" class="date active" onclick="setDate(this.id); getEvents(this.id)">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                         <div>{{ $day[2] }}</div>
                                     </div>
