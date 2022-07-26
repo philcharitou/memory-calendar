@@ -24,9 +24,22 @@ return new class extends Migration
         });
 
         Schema::create('event_photo', function (Blueprint $table) {
+            $table->increments('id');
             // Identification Fields
             $table->foreignId('event_id')->constrained(); //Has Foreign
             $table->foreignId('photo_id')->constrained();
+
+            // Foreign Keys
+            $table->foreign('event_id')
+                ->references('id')
+                ->on('events')
+                ->onDelete('cascade');
+
+            // Foreign Keys
+            $table->foreign('photo_id')
+                ->references('id')
+                ->on('photos')
+                ->onDelete('cascade');
         });
     }
 
