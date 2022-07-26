@@ -167,7 +167,7 @@ class EventController extends Controller
 
         if(isset($event)) {
             foreach($event->photos as $photo) {
-//                $array[] = $photo->url;
+//              $array[] = $photo->url;
                 $array[] = 1;
             }
 
