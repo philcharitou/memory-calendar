@@ -18,9 +18,8 @@ class Photo extends Model
         'description',
     ];
 
-    // Photo model belongs to an event
-    public function event()
+    public function events()
     {
-        return $this->belongsTo(Event::class);
+        return $this->belongsToMany(Event::class);
     }
 }

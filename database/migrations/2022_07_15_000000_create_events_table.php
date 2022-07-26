@@ -23,17 +23,10 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('event_photos', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('event_photo', function (Blueprint $table) {
             // Identification Fields
-            $table->integer('event_id')->unsigned(); //Has Foreign
-            $table->string('photo');
-
-            // Foreign Keys
-            $table->foreign('event_id')
-                ->references('id')
-                ->on('events')
-                ->onDelete('cascade');
+            $table->foreignId('event_id')->constrained(); //Has Foreign
+            $table->foreignId('photo_id')->constrained();
         });
     }
 
