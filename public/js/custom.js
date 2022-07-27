@@ -53,6 +53,7 @@ function getEvents(clicked_id) {
                 $("#event-modal").css("background", bg_color[key]);
                 $("#event-modal").css("color", text_color[key]);
 
+                existing_event.children('#event-date')[0].innerHTML = results[5];
                 existing_event.children('#event-name')[0].innerHTML = results[1];
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];

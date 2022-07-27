@@ -132,6 +132,7 @@
                     </a>
                 </div>
                 <div id="existing-event">
+                    <p id="event-date"></p>
                     <p id="event-name"></p>
                     <p id="event-location"></p>
                     <p id="event-description"></p>
