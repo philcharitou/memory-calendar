@@ -675,6 +675,7 @@ input:focus {
 
 .date * {
     text-align: center;
+    color: white;
 }
 
 .date:hover {
