@@ -73,7 +73,7 @@ function getEvents(clicked_id) {
                 for (let i = 0; i < results[4].length; i++) {
                     existing_event.children('.slideshow-container')[0].append(
                         '<div class="mySlides fade"> ' +
-                        '<div class="numbertext">' + i + ' / ' + results[4].length + '</div> ' +
+                        '<div class="numbertext">' + (i + 1) + ' / ' + results[4].length + '</div> ' +
                         '<img src="' + results[4][i] + '" style="width:100%"> ' +
                         '</div>'
                     );
