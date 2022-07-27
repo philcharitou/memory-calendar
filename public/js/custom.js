@@ -44,9 +44,6 @@ function getEvents(clicked_id) {
 
                 $('#existing-event').children('.slideshow-container').remove();
 
-                existing_event.css("display", "unset")
-                $("#create-event").css("display", "none")
-
                 // Randomness for array key
                 var key = Math.floor(Math.random() * 4)
                 // Change CSS for randomness
@@ -60,6 +57,9 @@ function getEvents(clicked_id) {
 
                 existing_event.append('<div class="slideshow-container">');
 
+                existing_event.css("display", "unset")
+                $("#create-event").css("display", "none")
+
                 for (let i = 0; i < results[4].length; i++) {
                     existing_event.children('.slideshow-container').append(
                         '<div class="mySlides fade"> ' +
@@ -70,13 +70,11 @@ function getEvents(clicked_id) {
                 }
 
                 showSlides();
-
-                for (let i = 0; i < results[4].length; i++) {
-                    console.log(results[4][i]);
-                }
             } else {
+                $("#event-modal").css("background", '#ffffff');
+
                 $("#existing-event").css("display", "none")
-                $("#create-event").css("display", "unset")
+                $("#create-event").css("display", "flex")
             }
         },
         error: function (data) {
