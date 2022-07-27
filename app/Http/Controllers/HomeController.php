@@ -75,9 +75,9 @@ class HomeController extends Controller
                     }
                 } else {
                     if(!$active_month) {
-                        $temp_array[] = [$current_date->toDateString(), 0, "", "", $event->id];
+                        $temp_array[] = [$current_date->toDateString(), 0, "", "", ""];
                     } else {
-                        $temp_array[] = [$current_date->toDateString(), 1, "", "", $event->id];
+                        $temp_array[] = [$current_date->toDateString(), 1, "", "", ""];
                     }
                 }
 
