@@ -1068,6 +1068,18 @@ input:focus {
         grid-template-rows: repeat(6, 50px);
     }
 
+    #month {
+        font-size: 2rem;
+    }
+
+    #month-move {
+        padding: 0 1rem;
+    }
+
+    .date {
+        font-size: 0.5rem;
+    }
+
     .fixed-header {
         top: 0;
     }
