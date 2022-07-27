@@ -66,9 +66,9 @@ class EventController extends Controller
             'description' => $request->description,
         ]);
 
-        dd($request->all());
+        dump($request->all());
 
-        foreach ($request->file('images') as $key => $file) {
+        foreach ($request->file('images') as $file) {
 
             $path = $file->store('images', 's3');
 
