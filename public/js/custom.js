@@ -76,6 +76,8 @@ function getEvents(clicked_id) {
                 $("#existing-event").css("display", "none")
                 $("#create-event").css("display", "flex")
             }
+
+            $("#event-modal").addClass("active-modal");
         },
         error: function (data) {
             // Log error in console
@@ -140,7 +142,6 @@ $('.date').click(function () {
     $("#modal-background").addClass("pointer-events");
 
     $("#event-modal").addClass("pointer-events");
-    $("#event-modal").addClass("active-modal");
 });
 
 $(".page-down").click(function () {
