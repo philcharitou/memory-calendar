@@ -70,17 +70,16 @@ function getEvents(clicked_id) {
 
                 existing_event.append('<div class="slideshow-container">');
 
-                for (let i = 0; i < results[4].length; i++) {
-                    existing_event.children('.slideshow-container')[0].append(
-                        "<div class=\"mySlides fade\"> " +
-                        "<div class=\"numbertext\">" + (i + 1) + " / " + results[4].length + "</div> " +
-                        "<img src=\"" + results[4][i] + "\" style=\"width:100%\"> " +
-                        "</div>"
-                    );
-                }
+                // for (let i = 0; i < results[4].length; i++) {
+                //     existing_event.children('.slideshow-container')[0].append(
+                //         '<div class="mySlides fade"> <div class="numbertext">' + (i + 1) + ' / ' + results[4].length + '</div> ' +
+                //         '<img src="' + results[4][i] + '" style="width:100%"> ' +
+                //         '</div>'
+                //     );
+                // }
 
-                existing_event.children('.slideshow-container')[0].append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a>');
-                existing_event.children('.slideshow-container')[0].append('<a class="next" onclick="plusSlides(1)">&#10095;</a>');
+                existing_event.children('.slideshow-container').append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a>');
+                existing_event.children('.slideshow-container').append('<a class="next" onclick="plusSlides(1)">&#10095;</a>');
 
                 $(".modal").addClass("pointer-events");
                 $(".modal").addClass("active-modal");
