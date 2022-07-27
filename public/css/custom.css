@@ -1047,7 +1047,8 @@ input:focus {
     }
 
     .days_left span {
-        line-height: 8rem;
+        font-size: 3rem;
+        line-height: 5rem;
     }
 
     .calendar-grid {
