@@ -1,5 +1,5 @@
 let slideIndex = 1;
-showSlides();
+var slideTimeout = null;
 
 // Next/previous controls
 function plusSlides(n) {
@@ -20,7 +20,7 @@ function showSlides() {
     console.log(slides);
 
     slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+    slideTimeout = setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
 function getEvents(clicked_id) {
@@ -69,6 +69,8 @@ function getEvents(clicked_id) {
                 $(".modal").addClass("pointer-events");
                 $(".modal").addClass("active-modal");
 
+                showSlides();
+
                 for (let i = 0; i < results[4].length; i++) {
                     console.log(results[4][i]);
                 }
@@ -95,6 +97,10 @@ $(".exit-modal").click(function () {
 
     $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
+
+    if(slideTimeout){
+        clearTimeout(slideTimeout);
+    }
 });
 
 $("#modal-background").click(function () {
@@ -103,6 +109,10 @@ $("#modal-background").click(function () {
 
     $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
+
+    if(slideTimeout){
+        clearTimeout(slideTimeout);
+    }
 });
 
 $('input[type="email"]').on('focus', function () {
