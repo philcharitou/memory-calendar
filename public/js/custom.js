@@ -21,6 +21,8 @@ function getEvents(clicked_id) {
                 $("#event-location").innerHTML = results[2];
                 $("#event-description").innerHTML = results[3];
 
+                $("#existing-event").children('#event-name')[0].innerHTML = results[1];
+
                 $("#existing-event").children('img')[0].src = results[4][1]
 
                 for(let i = 0; i < results[4].length; i++) {
