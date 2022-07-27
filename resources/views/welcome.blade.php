@@ -104,7 +104,7 @@
                                          class="date active" onclick="getEvents(this.id); setDate(this.id)">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                         <div>{{ $day[2] }}</div>
-                                        <a style="width: 20px; height: 20px; background: red" href="{{ route('events.destroy', ['id', $day[6]]) }}"></a>
+                                        <a style="width: 20px; height: 20px; background: red" href="{{ route('events.destroy', ['id', $day[4]]) }}"></a>
                                     </div>
                                 @endif
                             @endforeach

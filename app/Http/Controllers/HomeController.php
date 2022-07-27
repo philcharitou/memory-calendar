@@ -65,19 +65,19 @@ class HomeController extends Controller
 
                 if($event) {
                     if(!$active_month) {
-                        $temp_array[] = [$current_date->toDateString(), 0, $event->name, ""];
+                        $temp_array[] = [$current_date->toDateString(), 0, $event->name, "", $event->id];
                     } else {
                         if($event->photos()->first()) {
-                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, Storage::disk('s3')->url($event->photos()->first()->url)];
+                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, Storage::disk('s3')->url($event->photos()->first()->url), $event->id];
                         } else {
-                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, ""];
+                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, "", $event->id];
                         }
                     }
                 } else {
                     if(!$active_month) {
-                        $temp_array[] = [$current_date->toDateString(), 0, "", ""];
+                        $temp_array[] = [$current_date->toDateString(), 0, "", "", $event->id];
                     } else {
-                        $temp_array[] = [$current_date->toDateString(), 1, "", ""];
+                        $temp_array[] = [$current_date->toDateString(), 1, "", "", $event->id];
                     }
                 }
 
