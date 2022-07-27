@@ -14,14 +14,20 @@ function getEvents(clicked_id) {
 
             // Determine if data was found, then populate respective modal
             if(results[0] === 0) {
-                $("#existing-event").css("display", "unset")
+                var existing_event = $("#existing-event");
+
+                existing_event.css("display", "unset")
                 $("#create-event").css("display", "none")
 
-                $("#existing-event").children('#event-name')[0].innerHTML = results[1];
-                $("#existing-event").children('#event-location')[0].innerHTML = results[2];
-                $("#existing-event").children('#event-description')[0].innerHTML = results[3];
+                existing_event.children('#event-name')[0].innerHTML = results[1];
+                existing_event.children('#event-location')[0].innerHTML = results[2];
+                existing_event.children('#event-description')[0].innerHTML = results[3];
 
-                $("#existing-event").children('img')[0].src = results[4][1]
+                existing_event.children('img')[0].src = results[4][1]
+
+                // for (let i = 0; i < results[4].length; i++) {
+                //     $("#existing-event").append('<div id="new-block-2"></div>');
+                // }
 
                 for(let i = 0; i < results[4].length; i++) {
                     console.log(results[4][i]);
