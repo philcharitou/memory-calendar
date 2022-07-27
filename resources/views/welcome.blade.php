@@ -24,6 +24,7 @@
 
         <script>
             window.onload = function() {
+                console.log(months_away);
                 document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value + "%")
             };
         </script>
@@ -39,7 +40,7 @@
             var month = {{ $month_number }};
             var year = {{ $year }};
 
-            var months_away = {{ $number_of_months }} - 1;
+            var months_away = {{ $number_of_months }};
             var value = months_away * 100;
         </script>
 
