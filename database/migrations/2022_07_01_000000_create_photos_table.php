@@ -17,11 +17,16 @@ return new class extends Migration
             $table->increments('id');
             $table->string('url')->unique();
             $table->string('name')->nullable();
-            $table->string('format')->nullable();
             $table->string('caption')->nullable();
             $table->longText('description')->nullable();
 
+            $table->integer('event_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('event_id')
+                ->references('id')
+                ->on('events')
+                ->onDelete('cascade');
         });
     }
 
