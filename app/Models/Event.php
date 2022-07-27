@@ -19,6 +19,6 @@ class Event extends Model
 
     public function photos()
     {
-        return $this->hasMany(Photo::class);
+        return $this->belongsToMany(Photo::class);
     }
 }
