@@ -1,11 +1,6 @@
 let slideIndex = 1;
 var slideTimeout = null;
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
 function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -58,12 +53,6 @@ function getEvents(clicked_id) {
                         '</div>'
                     );
                 }
-
-                existing_event.children('.slideshow-container').append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a>');
-                existing_event.children('.slideshow-container').append('<a class="next" onclick="plusSlides(1)">&#10095;</a>');
-
-                // $(".modal").addClass("pointer-events");
-                // $(".modal").addClass("active-modal");
 
                 showSlides();
 
