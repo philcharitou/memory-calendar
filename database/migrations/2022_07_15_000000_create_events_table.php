@@ -26,8 +26,8 @@ return new class extends Migration
         Schema::create('event_photo', function (Blueprint $table) {
             $table->increments('id');
             // Identification Fields
-            $table->foreignId('event_id')->constrained(); //Has Foreign
-            $table->foreignId('photo_id')->constrained();
+            $table->foreignId('event_id')->unsigned(); //Has Foreign
+            $table->foreignId('photo_id')->unsigned();
 
             // Foreign Keys
             $table->foreign('event_id')
