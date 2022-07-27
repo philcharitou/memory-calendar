@@ -73,7 +73,7 @@ class EventController extends Controller
             Storage::disk('s3')->setVisibility($path, 'public');
 
             $image = Photo::create([
-                'url' => $path,
+                'url' => Storage::disk('s3')->url($path),
                 'name' => basename($path),
             ]);
 
