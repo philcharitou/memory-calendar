@@ -7,6 +7,8 @@ function plusSlides(n) {
 }
 
 function showSlides() {
+    console.log("running slides")
+
     let i;
     let slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
