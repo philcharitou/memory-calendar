@@ -162,6 +162,11 @@ body {
     cursor: pointer;
 }
 
+
+#existing-event {
+    color: inherit;
+}
+
 #existing-event * {
     color: inherit;
     font-family: 'Titillium Web', sans-serif;
@@ -174,11 +179,14 @@ body {
 #existing-event p:nth-child(1) {
     font-size: 2rem;
     text-transform: uppercase;
+    text-align: center;
 }
+#existing-event p:nth-child(1) sup {font-size: 1rem;}
 
 #existing-event p:nth-child(2) {
     font-size: 2rem;
     text-transform: uppercase;
+    font-style: italic;
 }
 
 #existing-event p:nth-child(3) {
