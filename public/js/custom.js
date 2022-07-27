@@ -38,8 +38,6 @@ function getEvents(clicked_id) {
         success: function (result) {
             var results = $.parseJSON(result);
 
-            console.log(results);
-
             // Determine if data was found, then populate respective modal
             if (results[0] === 0) {
                 var existing_event = $("#existing-event");
@@ -50,7 +48,7 @@ function getEvents(clicked_id) {
                 $("#create-event").css("display", "none")
 
                 // Randomness for array key
-                var key = getRandomInt(4);
+                var key = Math.floor(Math.random() * 4)
                 // Change CSS for randomness
                 $("#event-modal").css("background", bg_color[key]);
                 $("#event-modal").css("color", text_color[key]);
@@ -77,7 +75,7 @@ function getEvents(clicked_id) {
                 }
             } else {
                 $("#existing-event").css("display", "none")
-                $("#create-event").css("display", "flex")
+                $("#create-event").css("display", "unset")
             }
         },
         error: function (data) {
