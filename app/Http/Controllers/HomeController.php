@@ -88,7 +88,6 @@ class HomeController extends Controller
             $total_array[] = $temp_array;
         }
 
-        $number_of_months -= 1;
         $month_number = $current_date->subMonth()->format('m');
         $month = $current_date->format('F');
         $year = $current_date->format('Y');
