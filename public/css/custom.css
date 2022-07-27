@@ -864,7 +864,14 @@ input:focus {
 
 /* Slideshow container */
 .slideshow-container {
+    height: 400px;
+
     max-width: 1000px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: relative;
     margin: auto;
 }
@@ -986,19 +993,16 @@ input:focus {
         display: flex;
     }
 
-    #user-top {
-        display: none;
-    }
-
-    #menu {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-    }
-
     #fixed-content {
         width: 100%;
         margin: auto;
+    }
+
+    #event-modal {
+        height: 80%;
+        width: 80%;
+
+        max-height: 700px;
     }
 
     .calendar-grid {
