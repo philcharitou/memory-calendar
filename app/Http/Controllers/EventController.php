@@ -75,7 +75,6 @@ class EventController extends Controller
             $image = Photo::create([
                 'url' => $path,
                 'name' => basename($path),
-                'location' => $request->location,
             ]);
 
 
