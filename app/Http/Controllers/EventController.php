@@ -167,7 +167,7 @@ class EventController extends Controller
                 $array[] = Storage::disk('s3')->url($photo->url);
             }
 
-            return json_encode(array(0, $event->name, $event->location, $event->description, $array, Carbon::parse($event->date)->format('M d')));
+            return json_encode(array(0, $event->name, $event->location, $event->description, $array, Carbon::parse($event->date)->format('M d'), $event->id));
         } else {
             return json_encode([]);
         }
