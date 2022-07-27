@@ -40,7 +40,7 @@
             var month = {{ $month_number }};
             var year = {{ $year }};
 
-            var months_away = {{ $number_of_months }};
+            var months_away = {{ $number_of_months }} - 1;
             var value = months_away * 100;
         </script>
 
