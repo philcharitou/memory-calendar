@@ -1,3 +1,44 @@
+let slideIndex = 0;
+showSlides();
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+}
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
 function getEvents(clicked_id) {
     var Date = document.getElementById(clicked_id).id;
 
@@ -6,14 +47,14 @@ function getEvents(clicked_id) {
     $.ajax({
         type: "GET",
         url: "/get-ajax",
-        data: { date: Date },
+        data: {date: Date},
         success: function (result) {
             var results = $.parseJSON(result);
 
             console.log(results);
 
             // Determine if data was found, then populate respective modal
-            if(results[0] === 0) {
+            if (results[0] === 0) {
                 var existing_event = $("#existing-event");
 
                 existing_event.css("display", "unset")
@@ -23,13 +64,23 @@ function getEvents(clicked_id) {
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];
 
-                existing_event.children('img')[0].src = results[4][1]
+                // existing_event.children('img')[0].src = results[4][1]
 
-                // for (let i = 0; i < results[4].length; i++) {
-                //     $("#existing-event").append('<div id="new-block-2"></div>');
-                // }
+                existing_event.append('<div class="slideshow-container">');
 
-                for(let i = 0; i < results[4].length; i++) {
+                for (let i = 0; i < results[4].length; i++) {
+                    existing_event.children('.slideshow-container')[0].append(
+                        '<div class="mySlides fade"> ' +
+                        '<div class="numbertext">' + i + ' / ' + results[4].length + '</div> ' +
+                        '<img src="' + results[4][i] + '" style="width:100%"> ' +
+                        '</div>'
+                    );
+                }
+
+                existing_event.children('.slideshow-container')[0].append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a>');
+                existing_event.children('.slideshow-container')[0].append('<a class="next" onclick="plusSlides(1)">&#10095;</a>');
+
+                for (let i = 0; i < results[4].length; i++) {
                     console.log(results[4][i]);
                 }
             } else {
@@ -49,36 +100,40 @@ function setDate(clicked_id) {
     sessionStorage.setItem("date", clicked_id);
 }
 
-$(".exit-modal").click(function() {
+$(".exit-modal").click(function () {
     $("#modal-background").addClass("opacity");
     $("#modal-background").removeClass("pointer-events");
 
     $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
+
+    $('#existing-event').children('.slideshow-container').remove();
 });
 
-$("#modal-background").click(function() {
+$("#modal-background").click(function () {
     $("#modal-background").addClass("opacity");
     $("#modal-background").removeClass("pointer-events");
 
     $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
+
+    $('#existing-event').children('.slideshow-container').remove();
 });
 
-$('input[type="email"]').on('focus', function() {
+$('input[type="email"]').on('focus', function () {
     $(this).addClass('focused-input');
     $('.input-header').addClass('focused');
 });
 
-$('input[type="email"]').blur('focus', function() {
-    if($(this).val() == "") {
+$('input[type="email"]').blur('focus', function () {
+    if ($(this).val() == "") {
         $(this).removeClass('focused-input');
         $('.input-header').removeClass('focused');
     }
 });
 
-$('.password-toggle').click(function() {
-    if($('#login-password').attr('type') === 'password') {
+$('.password-toggle').click(function () {
+    if ($('#login-password').attr('type') === 'password') {
         $("#login-password").prop("type", "text");
         $('.fa-eye').addClass('fa-eye-slash');
     } else {
@@ -87,7 +142,7 @@ $('.password-toggle').click(function() {
     }
 });
 
-$('.date').click(function() {
+$('.date').click(function () {
     $("#modal-background").removeClass("opacity");
     $("#modal-background").addClass("pointer-events");
 
@@ -95,7 +150,7 @@ $('.date').click(function() {
     $("#event-modal").addClass("active-modal");
 });
 
-$(".page-down").click(function() {
+$(".page-down").click(function () {
     // Add scrolling JS here
 });
 
@@ -114,12 +169,12 @@ var months = {
     12: "December",
 }
 
-$("#month-left").click(function() {
-    if((String(month) + String(year)) !== "42022") {
+$("#month-left").click(function () {
+    if ((String(month) + String(year)) !== "42022") {
         value -= 100;
         month -= 1;
 
-        if(month < 1) {
+        if (month < 1) {
             month = 12;
         }
 
@@ -131,12 +186,12 @@ $("#month-left").click(function() {
     }
 });
 
-$("#month-right").click(function() {
-    if((String(month) + String(year)) !== (String(original_month) + String(original_year))) {
+$("#month-right").click(function () {
+    if ((String(month) + String(year)) !== (String(original_month) + String(original_year))) {
         value += 100;
         month += 1;
 
-        if(month > 12) {
+        if (month > 12) {
             month = 1;
         }
 
