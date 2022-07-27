@@ -66,13 +66,9 @@ class EventController extends Controller
             'description' => $request->description,
         ]);
 
-        dump($request->all());
-
         foreach ($request->file('images') as $file) {
 
             $path = $file->store('images', 's3');
-
-            dd($path);
 
             Storage::disk('s3')->setVisibility($path, 'public');
 
