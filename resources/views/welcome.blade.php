@@ -99,7 +99,7 @@
                                              rgba(0, 0, 0, 0.2)
                                              ), url({{ $day[3] }})"
                                          @endif
-                                         class="date active" onclick="setDate(this.id); getEvents(this.id)">
+                                         class="date active" onclick="getEvents(this.id); setDate(this.id)">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                         <div>{{ $day[2] }}</div>
                                     </div>

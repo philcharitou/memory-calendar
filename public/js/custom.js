@@ -17,9 +17,9 @@ function getEvents(clicked_id) {
                 $("#existing-event").css("display", "unset")
                 $("#create-event").css("display", "none")
 
-                $("#event-name").innerText = results[1];
-                $("#event-location").innerText = results[2];
-                $("#event-description").innerText = results[3];
+                $("#event-name").text = results[1];
+                $("#event-location").text = results[2];
+                $("#event-description").text = results[3];
 
                 $("#existing-event").children('img')[0].src = results[4][1]
 
