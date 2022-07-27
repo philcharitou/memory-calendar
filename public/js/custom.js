@@ -3,7 +3,7 @@ var slideTimeout = null;
 var bg_color = [
     '#83b0b6', // blue
     '#e25440', // orange
-    '#e25440', // yellow
+    '#feba4d', // yellow
     '#fff8e6', // cream
 ]
 var text_color = [
@@ -53,7 +53,7 @@ function getEvents(clicked_id) {
                 $("#event-modal").css("background", bg_color[key]);
                 $("#event-modal").css("color", text_color[key]);
 
-                existing_event.children('#event-date')[0].innerHTML = results[5];
+                existing_event.children('#event-date')[0].innerHTML = results[5] + "<sup>th</sup>";
                 existing_event.children('#event-name')[0].innerHTML = results[1];
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];

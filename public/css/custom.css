@@ -171,19 +171,22 @@ body {
     margin: 0.5rem 0;
 }
 
-#existing-event:nth-child(1) {
+#existing-event p:nth-child(1) {
     font-size: 2rem;
+    text-transform: uppercase;
 }
 
-#existing-event:nth-child(2) {
+#existing-event p:nth-child(2) {
     font-size: 2rem;
+    text-transform: uppercase;
 }
 
-#existing-event:nth-child(3) {
+#existing-event p:nth-child(3) {
     font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
-#existing-event:nth-child(4) {
+#existing-event p:nth-child(4) {
     font-size: 1rem;
 }
 
