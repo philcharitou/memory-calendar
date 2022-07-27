@@ -90,10 +90,7 @@
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                     </div>
                                 @else
-                                    <div id="{{ $day[0] }}" style="background: linear-gradient(
-                                        rgba(0, 0, 0, 0.7),
-                                        rgba(0, 0, 0, 0.7)
-                                        ), url({{ $day[3] }})" class="date active" onclick="setDate(this.id); getEvents(this.id)">
+                                    <div id="{{ $day[0] }}" style="background: url({{ $day[3] }})" class="date active" onclick="setDate(this.id); getEvents(this.id)">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                         <div>{{ $day[2] }}</div>
                                     </div>
