@@ -47,6 +47,16 @@ class EventController extends Controller
     }
 
     /**
+     * Display resource
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function show()
+    {
+        return null;
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
