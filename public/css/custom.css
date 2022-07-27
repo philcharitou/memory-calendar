@@ -668,6 +668,9 @@ input:focus {
 .date {
     border: solid 1px #c2c2c2;
     border-radius: 5px;
+
+    background-position: center;
+    background-size: cover !important;
 }
 
 .date * {
