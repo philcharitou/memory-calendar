@@ -57,6 +57,8 @@ function getEvents(clicked_id) {
             if (results[0] === 0) {
                 var existing_event = $("#existing-event");
 
+                $('#existing-event').children('.slideshow-container').remove();
+
                 existing_event.css("display", "unset")
                 $("#create-event").css("display", "none")
 
@@ -106,8 +108,6 @@ $(".exit-modal").click(function () {
 
     $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
-
-    $('#existing-event').children('.slideshow-container').remove();
 });
 
 $("#modal-background").click(function () {
@@ -116,8 +116,6 @@ $("#modal-background").click(function () {
 
     $(".modal").removeClass("pointer-events");
     $(".modal").removeClass("active-modal");
-
-    $('#existing-event').children('.slideshow-container').remove();
 });
 
 $('input[type="email"]').on('focus', function () {
