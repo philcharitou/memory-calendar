@@ -164,7 +164,7 @@ class EventController extends Controller
 
         if(isset($event)) {
             foreach($event->photos as $key => $photo) {
-                $array[] = $photo->url;
+                $array[] = Storage::disk('s3')->url($photo->url);
             }
 
             return json_encode(array(0, $event->name, $event->location, $event->description, $array));

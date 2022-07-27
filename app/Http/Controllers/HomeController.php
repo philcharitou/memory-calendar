@@ -6,6 +6,7 @@ use App\Models\Event;
 use App\Models\Photo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -67,7 +68,7 @@ class HomeController extends Controller
                         $temp_array[] = [$current_date->toDateString(), 0, $event->name, ""];
                     } else {
                         if($event->photos()->first()) {
-                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, $event->photos()->first()->url];
+                            $temp_array[] = [$current_date->toDateString(), 1, $event->name, Storage::disk('s3')->url($event->photos()->first()->url)];
                         } else {
                             $temp_array[] = [$current_date->toDateString(), 1, $event->name, ""];
                         }
