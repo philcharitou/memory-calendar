@@ -1046,6 +1046,10 @@ input:focus {
         max-height: 700px;
     }
 
+    .days_left span {
+        line-height: 8rem;
+    }
+
     .calendar-grid {
         grid-template-rows: repeat(6, 50px);
     }
