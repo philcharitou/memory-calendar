@@ -73,6 +73,7 @@ body {
     margin: auto;
     position: absolute;
 
+    overflow: scroll;
     opacity: 0;
     border-radius: 1rem;
     background: white;
@@ -200,6 +201,7 @@ body {
 #existing-event p:nth-child(4) {
     font-size: 1rem;
     font-family: Oswald;
+    font-weight: 300;
     margin: 2rem 0;
 }
 
@@ -1045,6 +1047,8 @@ input:focus {
     #fixed-content {
         width: 100%;
         margin: auto;
+
+        padding: 0 0.5rem;
     }
 
     #event-modal {
@@ -1052,6 +1056,24 @@ input:focus {
         width: 80%;
 
         max-height: 700px;
+    }
+
+    #event-date {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+    }
+
+    #event-name {
+        font-size: 1.3rem;
+    }
+
+    #event-location {
+        font-size: 1rem;
+    }
+
+    #event-description {
+        font-size: 0.75rem;
+        margin: 1rem 0;
     }
 
     #create-event {
