@@ -57,7 +57,7 @@ function getEvents(clicked_id) {
             if (results[0] === 0) {
                 var existing_event = $("#existing-event");
 
-                $('#existing-event').children('.slideshow-container').remove();
+                // $('#existing-event').children('.slideshow-container').remove();
 
                 existing_event.css("display", "unset")
                 $("#create-event").css("display", "none")
@@ -66,21 +66,21 @@ function getEvents(clicked_id) {
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];
 
-                // existing_event.children('img')[0].src = results[4][1]
+                existing_event.children('img')[0].src = results[4][1]
 
                 existing_event.append('<div class="slideshow-container">');
 
-                for (let i = 0; i < results[4].length; i++) {
-                    existing_event.children('.slideshow-container')[0].append(
-                        '<div class="mySlides fade"> ' +
-                        '<div class="numbertext">' + (i + 1) + ' / ' + results[4].length + '</div> ' +
-                        '<img src="' + results[4][i] + '" style="width:100%"> ' +
-                        '</div>'
-                    );
-                }
-
-                existing_event.children('.slideshow-container')[0].append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a>');
-                existing_event.children('.slideshow-container')[0].append('<a class="next" onclick="plusSlides(1)">&#10095;</a>');
+                // for (let i = 0; i < results[4].length; i++) {
+                //     existing_event.children('.slideshow-container')[0].append(
+                //         '<div class="mySlides fade"> ' +
+                //         '<div class="numbertext">' + (i + 1) + ' / ' + results[4].length + '</div> ' +
+                //         '<img src="' + results[4][i] + '" style="width:100%"> ' +
+                //         '</div>'
+                //     );
+                // }
+                //
+                // existing_event.children('.slideshow-container')[0].append('<a class="prev" onclick="plusSlides(-1)">&#10094;</a>');
+                // existing_event.children('.slideshow-container')[0].append('<a class="next" onclick="plusSlides(1)">&#10095;</a>');
 
                 for (let i = 0; i < results[4].length; i++) {
                     console.log(results[4][i]);
