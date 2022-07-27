@@ -162,6 +162,19 @@ body {
     cursor: pointer;
 }
 
+#existing-event {
+    color: inherit;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#existing-event p {
+    margin: 0.5rem 0;
+}
+
+#existing-event:nth-child(1) {
+    font-size: 2rem;
+}
+
 .modal-header {
     width: 100%;
     height: auto;
@@ -331,8 +344,10 @@ body {
 .days_left {
     width: 100%;
 
-    text-align: center;
     margin: auto;
+    padding: 0 2rem;
+
+    text-align: center;
     font-size: 2rem;
     color: purple;
 }

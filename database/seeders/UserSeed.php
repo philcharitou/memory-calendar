@@ -18,7 +18,7 @@ class UserSeed extends Seeder
         User::create([
             'name' => 'Phil Charitou',
             'email' => 'passwordlogin@yoursite.com',
-            'password' => Hash::make('july27'),
+            'password' => Hash::make('cookies&cream'),
         ]);
     }
 }

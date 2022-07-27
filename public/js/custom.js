@@ -1,5 +1,17 @@
 let slideIndex = 1;
 var slideTimeout = null;
+var bg_color = [
+    '#83b0b6', // blue
+    '#e25440', // orange
+    '#e25440', // yellow
+    '#fff8e6', // cream
+]
+var text_color = [
+    '#ffffff', // blue
+    '#ffffff', // orange
+    '#2b2726', // yellow
+    '#e25440', // cream
+]
 
 function showSlides() {
     let i;
@@ -37,6 +49,12 @@ function getEvents(clicked_id) {
                 existing_event.css("display", "unset")
                 $("#create-event").css("display", "none")
 
+                // Randomness for array key
+                var key = getRandomInt(4);
+                // Change CSS for randomness
+                $("#event-modal").css("background", bg_color[key]);
+                $("#event-modal").css("color", text_color[key]);
+
                 existing_event.children('#event-name')[0].innerHTML = results[1];
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];
@@ -59,7 +77,7 @@ function getEvents(clicked_id) {
                 }
             } else {
                 $("#existing-event").css("display", "none")
-                $("#create-event").css("display", "unset")
+                $("#create-event").css("display", "flex")
             }
         },
         error: function (data) {
