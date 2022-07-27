@@ -134,7 +134,7 @@
                     <p id="event-name"></p>
                     <p id="event-location"></p>
                     <p id="event-description"></p>
-{{--                    <img src="" class="event-image" alt="">--}}
+                    <img src="" class="event-image" alt="">
                 </div>
             </div>
         </div>
