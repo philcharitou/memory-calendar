@@ -41,8 +41,6 @@ function getEvents(clicked_id) {
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];
 
-                // existing_event.children('img')[0].src = results[4][1]
-
                 existing_event.append('<div class="slideshow-container">');
 
                 for (let i = 0; i < results[4].length; i++) {
