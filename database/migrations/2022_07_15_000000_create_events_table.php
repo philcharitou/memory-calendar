@@ -22,25 +22,6 @@ return new class extends Migration
 
             $table->timestamps();
         });
-
-        Schema::create('event_photo', function (Blueprint $table) {
-            $table->increments('id');
-            // Identification Fields
-            $table->foreignId('event_id')->unsigned(); //Has Foreign
-            $table->foreignId('photo_id')->unsigned();
-
-            // Foreign Keys
-            $table->foreign('event_id')
-                ->references('id')
-                ->on('events')
-                ->onDelete('cascade');
-
-            // Foreign Keys
-            $table->foreign('photo_id')
-                ->references('id')
-                ->on('photos')
-                ->onDelete('cascade');
-        });
     }
 
     /**
@@ -51,6 +32,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('events');
-        Schema::dropIfExists('event_photo');
     }
 };
