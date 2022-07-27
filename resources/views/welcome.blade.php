@@ -25,7 +25,6 @@
         <script>
             window.onload = function() {
                 console.log(months_away);
-                console.log({{ $total_array }});
                 document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value + "%")
             };
         </script>
