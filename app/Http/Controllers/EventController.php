@@ -66,7 +66,7 @@ class EventController extends Controller
         $this->validate($request, [
             'name' => 'required | string | max:255',
             'location' => 'required | string | max:255',
-            'description' => 'string | max:855',
+            'description' => 'string | max:2042',
         ]);
 
         $event = Event::create([
