@@ -716,6 +716,8 @@ input:focus {
     border: solid 1px #c2c2c2;
     border-radius: 5px;
 
+    overflow: hidden;
+
     background-position: center;
     background-size: cover !important;
 }
