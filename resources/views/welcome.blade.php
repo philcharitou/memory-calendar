@@ -25,7 +25,7 @@
         <script>
             window.onload = function() {
                 console.log(months_away);
-                document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value + "%")
+                document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value - 1 + "%")
             };
         </script>
 
