@@ -41,25 +41,20 @@ class HomeController extends Controller
 
         for($i = 0; $i < $loop_iterations; $i++) {
 
+            $first_of_current_month = Carbon::parse("2022-04-01 00:00:00")->addMonths($i);
+
             if ($i == 0) {
                 $current_date = Carbon::parse("2022-03-27 00:00:00")->addDays($i * 42);
-
-                dump($current_date->toDateString());
-
             } else {
                 $current_date = Carbon::parse("2022-03-27 00:00:00")->addDays($i * 42);
 
-                dump($current_date->toDateString());
-
-                while($current_date->isoformat("D") != 1) {
+                while($current_date != $first_of_current_month) {
                     $current_date->subDay();
                 }
 
                 while($current_date->dayOfWeekIso != 7) {
                     $current_date->subDay();
                 }
-
-                dump($current_date->toDateString());
             }
 
             $temp_array = [];
