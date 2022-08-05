@@ -38,7 +38,7 @@ class HomeController extends Controller
 
         $total_array = [];
 
-        for($i = 0; $i < $number_of_months; $i++) {
+        for($i = 0; $i < ($number_of_months + 1); $i++) {
 
             if ($i == 0) {
                 $current_date = Carbon::parse("2022-03-27 00:00:00")->addDays($i * 42);
