@@ -89,7 +89,7 @@ class HomeController extends Controller
             $total_array[] = $temp_array;
         }
 
-        $month_number = $current_date->subMonth()->format('m');
+        $month_number = $current_date->subMonths(2)->format('m');
         $month = Carbon::now()->format('F');
         $year = Carbon::now()->format('Y');
 
