@@ -28,11 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         $origin_date = Carbon::parse("2022-03-27 00:00:00");
-        $march_first = Carbon::parse("2022-03-01 00:00:00");
+        $april_first = Carbon::parse("2022-03-01 00:00:00");
         // March 27 because it is the start of the calendar month for April
             // Actual date is April 7 for the formal
         $now = Carbon::now();
-        $number_of_months = $march_first->diff($now)->format('%m');
+        $number_of_months = $april_first->diff($now)->format('%m');
 
         $active_month = 0;
 

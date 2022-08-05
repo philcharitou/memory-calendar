@@ -24,7 +24,6 @@
 
         <script>
             window.onload = function() {
-                console.log(months_away);
                 document.getElementById("move-calendar").setAttribute("style", "margin-left: -" + value + "%")
             };
         </script>
@@ -34,7 +33,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <script>
-            var original_month = {{ $month_number }} - 1; // These stay the same
+            var original_month = {{ $month_number }}; // These stay the same
             var original_year = {{ $year }}; // These stay the same
 
             var month = {{ $month_number }};
