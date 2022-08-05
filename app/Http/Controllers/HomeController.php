@@ -33,12 +33,13 @@ class HomeController extends Controller
             // Actual date is April 7 for the formal
         $now = Carbon::now();
         $number_of_months = $april_first->diff($now)->format('%m');
+        $loop_iterations = $origin_date->addMonth()->diff($now)->format('%m');
 
         $active_month = 0;
 
         $total_array = [];
 
-        for($i = 0; $i < ($number_of_months + 1); $i++) {
+        for($i = 0; $i < $loop_iterations; $i++) {
 
             if ($i == 0) {
                 $current_date = Carbon::parse("2022-03-27 00:00:00")->addDays($i * 42);
