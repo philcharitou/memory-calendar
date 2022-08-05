@@ -90,8 +90,8 @@ class HomeController extends Controller
         }
 
         $month_number = $current_date->subMonth()->format('m');
-        $month = $current_date->format('F');
-        $year = $current_date->format('Y');
+        $month = Carbon::now()->format('F');
+        $year = Carbon::now()->format('Y');
 
         return view('welcome')
             ->with('year', $year)
