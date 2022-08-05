@@ -46,6 +46,8 @@ class HomeController extends Controller
             } else {
                 $current_date = Carbon::parse("2022-03-27 00:00:00")->addDays($i * 42);
 
+                dump($current_date);
+
                 while($current_date->isoformat("D") != 1) {
                     $current_date->subDay();
                 }
@@ -53,6 +55,8 @@ class HomeController extends Controller
                 while($current_date->dayOfWeekIso != 7) {
                     $current_date->subDay();
                 }
+
+                dump($current_date);
             }
 
             $temp_array = [];
