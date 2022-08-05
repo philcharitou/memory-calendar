@@ -42,6 +42,12 @@
 
             var months_away = {{ $number_of_months }};
             var value = months_away * 100; // This is for offsetting the month container
+
+            console.log(original_month);
+            console.log(original_year);
+            console.log(month);
+            console.log(year);
+            console.log(months_away);
         </script>
 
         <!-- Custom Styles -->
