@@ -109,11 +109,11 @@
                                          class="date active" onclick="getEvents(this.id); setDate(this.id)">
                                         <div class="date-number">{{ \Carbon\Carbon::parse($day[0])->format('d') }}</div>
                                         <div>{{ $day[2] }}</div>
-{{--                                        <form method="POST" action="{{ route('events.destroy', [$day[4]]) }}">--}}
-{{--                                            @csrf--}}
-{{--                                            @method('DELETE')--}}
-{{--                                            <button style="width: 20px; height: 20px; background: red"></button>--}}
-{{--                                        </form>--}}
+                                        <form method="POST" action="{{ route('events.destroy', [$day[4]]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button style="width: 20px; height: 20px; background: red"></button>
+                                        </form>
                                     </div>
                                 @endif
                             @endforeach
