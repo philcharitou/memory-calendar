@@ -40,7 +40,7 @@
             var month = {{ $month_number }};
             var year = {{ $year }};
 
-            var months_away = {{ $number_of_months }} - 2;
+            var months_away = {{ $number_of_months }};
             var value = months_away * 100; // This is for offsetting the month container
         </script>
 
