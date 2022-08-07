@@ -97,6 +97,7 @@ body {
     bottom: 1rem;
 
     font-size: 1.2rem;
+    z-index: 2;
 }
 
 #event-edit * {
