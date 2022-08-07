@@ -129,19 +129,21 @@ class EventController extends Controller
         $event->location = $request->location;
         $event->description = $request->description;
 
-        foreach ($request->file('images') as $file) {
+        if($request->hasFile('images')) {
+            foreach ($request->file('images') as $file) {
 
-            $path = $file->store('images', 's3');
+                $path = $file->store('images', 's3');
 
-            Storage::disk('s3')->setVisibility($path, 'public');
+                Storage::disk('s3')->setVisibility($path, 'public');
 
-            $image = Photo::create([
-                'url' => $path,
-                'name' => basename($path),
-            ]);
+                $image = Photo::create([
+                    'url' => $path,
+                    'name' => basename($path),
+                ]);
 
 
-            $event->photos()->attach($image);
+                $event->photos()->attach($image);
+            }
         }
 
         // Save resource
