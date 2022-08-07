@@ -99,7 +99,7 @@ body {
     font-size: 1.2rem;
 }
 
-#event-edit a {
+#event-edit * {
     font-family: "Font Awesome 6 Free" !important;
 }
 
@@ -223,8 +223,6 @@ body {
     font-weight: 300;
     margin: 2rem 0;
 }
-
-
 
 .modal-header {
     width: 100%;
