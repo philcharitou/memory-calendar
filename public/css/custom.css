@@ -95,6 +95,12 @@ body {
     position: absolute;
     left: 1rem;
     bottom: 1rem;
+
+    font-size: 1.2rem;
+}
+
+#event-edit a {
+    font-family: "Font Awesome 6 Free" !important;
 }
 
 .event-image {
