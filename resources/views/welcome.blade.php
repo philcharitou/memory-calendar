@@ -144,11 +144,10 @@
                 </div>
                 <div id="existing-event">
                     <p id="event-date"></p>
+                    <a id="event-edit" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                     <p id="event-name"></p>
                     <p id="event-location"></p>
                     <p id="event-description"></p>
-{{--                    <img src="" class="event-image" alt="">--}}
-                    <a id="event-edit" href="">Edit</a>
                 </div>
             </div>
         </div>
