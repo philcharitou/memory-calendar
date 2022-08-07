@@ -206,18 +206,18 @@ body {
 }
 #existing-event p:nth-child(1) sup {font-size: 1rem;}
 
-#existing-event p:nth-child(2) {
+#existing-event p:nth-child(3) {
     font-size: 2rem;
     text-transform: uppercase;
     font-style: italic;
 }
 
-#existing-event p:nth-child(3) {
+#existing-event p:nth-child(4) {
     font-size: 1.5rem;
     text-transform: uppercase;
 }
 
-#existing-event p:nth-child(4) {
+#existing-event p:nth-child(5) {
     font-size: 1rem;
     font-family: Oswald;
     font-weight: 300;
