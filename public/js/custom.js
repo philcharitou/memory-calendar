@@ -55,6 +55,8 @@ function getEvents(clicked_id) {
                 existing_event.children('#event-location')[0].innerHTML = results[2];
                 existing_event.children('#event-description')[0].innerHTML = results[3];
 
+                $('#event-edit').attr("href", results[6])
+
                 existing_event.append('<div class="slideshow-container">');
 
                 existing_event.css("display", "unset")

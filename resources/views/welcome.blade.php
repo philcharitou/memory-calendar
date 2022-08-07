@@ -148,6 +148,7 @@
                     <p id="event-location"></p>
                     <p id="event-description"></p>
 {{--                    <img src="" class="event-image" alt="">--}}
+                    <a id="event-edit" href="">Edit</a>
                 </div>
             </div>
         </div>

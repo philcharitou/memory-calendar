@@ -1078,6 +1078,19 @@ input:focus {
         margin: 1rem 0;
     }
 
+    #event-edit {
+        width: 70px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+    }
+
     #create-event {
         width: 100%;
         justify-content: center;

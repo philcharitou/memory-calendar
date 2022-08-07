@@ -13,7 +13,7 @@
             <br>
             left
             @else
-            <span>Happy Birthday <br> Bubs!</span>
+            <span>Welcome Back <br> Bubs!</span>
             @endif
         </div>
         <div class="card-body">

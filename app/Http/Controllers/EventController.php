@@ -117,36 +117,37 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $event = Event::create([
-            'item_code' => $request->item_code,
-            'name' => $request->name,
-            'product_category' => $request->product_category,
-            'parent_category' => $request->parent_category,
+        $this->validate($request, [
+            'name' => 'required | string | max:255',
+            'location' => 'required | string | max:255',
+            'description' => 'string | max:2042',
         ]);
-
-        // Update relationship with contacts and components
-        $this->add_albums($event, $request);
-
-        // Save resource
-        $event->save();
-
 
         $event = Event::where('id', $id)->first();
 
-        /** Update Component */
-        // Identification Field(s)
-        $event->item_code = $request->item_code;
         $event->name = $request->name;
-        $event->product_category = $request->product_category;
-        $event->parent_category = $request->parent_category;
+        $event->location = $request->location;
+        $event->description = $request->description;
 
-        // Update relationship with contacts and components
-        $this->add_albums($event, $request);
+        foreach ($request->file('images') as $file) {
+
+            $path = $file->store('images', 's3');
+
+            Storage::disk('s3')->setVisibility($path, 'public');
+
+            $image = Photo::create([
+                'url' => $path,
+                'name' => basename($path),
+            ]);
+
+
+            $event->photos()->attach($image);
+        }
 
         // Save resource
         $event->save();
 
-        return redirect()->back();
+        return redirect()->route('home')->with('success', '');
     }
 
     /**
@@ -177,7 +178,7 @@ class EventController extends Controller
                 $array[] = Storage::disk('s3')->url($photo->url);
             }
 
-            return json_encode(array(0, $event->name, $event->location, $event->description, $array, Carbon::parse($event->date)->format('M d')));
+            return json_encode(array(0, $event->name, $event->location, $event->description, $array, Carbon::parse($event->date)->format('M d'), route('events.edit', [$event->id])));
         } else {
             return json_encode([]);
         }
