@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Happy Birthday Bubs</title>
+        <title>Memory Calendar</title>
 
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}"/>
